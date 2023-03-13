@@ -72,22 +72,24 @@ const news = [
 
     <!-- LATEST NEWS -->
     <section class='bg-black py-12 lg:py-16'>
-      <h1 class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'>
+      <h2 class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'>
         LATEST NEWS
-      </h1>
+      </h2>
 
       <div class='py-10'>
         {
           news.map((latest) => (
-            <article class='grid lg:grid-cols-2 gap-10 w-full px-6 md:w-4/5 md:mx-auto items-center mb-10'>
+            <article class='grid lg:grid-cols-2 gap-10 w-full px-6 md:w-[90%] md:mx-auto xl:w-3/4 items-center mb-10'>
               <img src={latest.image} alt={latest.title} class='object-cover' />
 
               <div class='text-white'>
-                <span class='text-ekis italic text-xl pb-2 block'>
+                <span class='text-ekis italic text-lg md:text-xl pb-2 block'>
                   {latest.category}
                 </span>
-                <h2 class='text-2xl font-bold pb-4'>{latest.title}</h2>
-                <p class='pb-6'>{latest.description}</p>
+                <h3 class='text-xl md:text-2xl font-bold pb-4'>
+                  {latest.title}
+                </h3>
+                <p class='pb-6 text-sm md:text-base'>{latest.description}</p>
                 <a href='/ekis-hotspots' class='underline hover:opacity-60'>
                   READ MORE
                 </a>
@@ -118,9 +120,11 @@ const news = [
       />
 
       <div
-        class='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full'
+        class='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center'
       >
-        <h2 class='font-anton text-5xl lg:text-7xl'>NAPAPALIBUTAN NA TAYO!</h2>
+        <h2 class='font-anton text-4xl sm:text-5xl lg:text-7xl'>
+          NAPAPALIBUTAN NA TAYO!
+        </h2>
         <div class='py-4 space-x-4'>
           <Button text='MAGFILE NG REPORT' link='/ekis-sumbungan' />
           <Button text='EKIS HOTSPOT' link='/ekis-hotspots' />
