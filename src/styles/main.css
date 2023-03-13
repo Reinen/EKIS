@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.swiper-pagination-bullet {
+  @apply bg-white/50;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply bg-white;
+}

@@ -1,0 +1,18 @@
+---
+export interface Props {
+  text: string;
+  link: string;
+}
+
+const { text, link } = Astro.props;
+---
+
+<!-- Button -->
+<a
+  href={link}
+  class='bg-ekis text-white px-5 py-2 lg:py-3 rounded-full uppercase text-sm hover:opacity-80'
+>
+  {text}
+</a>
+
+<!-- END Button -->

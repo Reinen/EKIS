@@ -1,0 +1,96 @@
+---
+const links = [
+  {
+    name: 'Home',
+    link: '/',
+  },
+  {
+    name: 'What is EKIS',
+    link: '/what-is-ekis',
+  },
+  {
+    name: 'EKIS Sumbungan',
+    link: '/ekis-sumbungan',
+  },
+  {
+    name: 'EKIS Hotspots',
+    link: '/ekis-hotspots',
+  },
+  {
+    name: 'Contact Us',
+    link: '/contact-us',
+  },
+];
+---
+
+<!-- Header -->
+<header class='w-full shadow-lg fixed z-10 bg-white'>
+  <nav class='max-w-7xl mx-auto px-2 md:px-12 lg:px-28 xl:px-0'>
+    <div class='h-[100px] flex items-center justify-between'>
+      <!-- Logo -->
+      <div class='flex-shrink-0'>
+        <a href='/'>
+          <img src='/images/logo.png' alt='EKIS Logo' class='object-cover' />
+        </a>
+      </div>
+      <!-- Burger menu -->
+      <div class='flex items-center sm:hidden'>
+        <button
+          type='button'
+          class='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out'
+          aria-label='Main menu'
+          aria-expanded='false'
+        >
+          <svg
+            class='h-6 w-6'
+            stroke='currentColor'
+            fill='none'
+            viewBox='0 0 24 24'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M4 6h16M4 12h16M4 18h16'></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Links -->
+      <div class='hidden sm:block'>
+        <ul class='flex sm:space-x-3 md:space-x-6 lg:space-x-12'>
+          {
+            links.map((link) => (
+              <li>
+                <a href={link.link} class='hover:opacity-60 font-bold'>
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mobile menu, toggle classes with JavaScript -->
+    <div class='hidden sm:hidden'>
+      <ul
+        class='px-2 pt-2 pb-3 transition duration-300 ease-in-out text-center'
+      >
+        {
+          links.map((link) => (
+            <li>
+              <a
+                href={link.link}
+                class='hover:opacity-60 font-bold block px-3 py-2 rounded-md text-base'
+              >
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- END Header -->

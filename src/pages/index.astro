@@ -1,81 +1,131 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+
+const slides = [
+  {
+    image: '/images/img01.jpg',
+    alt: 'Slider 1',
+    text: 'Alamin ano ang EKIS',
+    link: '/what-is-ekis',
+  },
+  {
+    image: '/images/img01.jpg',
+    alt: 'Slider 2',
+    text: 'Lorem, ipsum dolor',
+    link: '/what-is-ekis',
+  },
+  {
+    image: '/images/img01.jpg',
+    alt: 'Slider 3',
+    text: 'Lorem ipsum dolor sit.',
+    link: '/what-is-ekis',
+  },
+];
+
+const news = [
+  {
+    image: '/images/img04.jpg',
+    category: 'Manila Bulletin',
+    title:
+      'BOC RAIDS SULU WAREHOUSE, SEIZES P1.4B WORTH OF SMUGGLED CIGARETTES',
+    description:
+      'The Bureau of Customs (BOC) has been on a roll in its big-time ant-smuggling campaigns as it confiscated, this time, around P1.4 billion worth of cigarettes in a raid on a warehouse in Sulu on Thursday, March 2.',
+  },
+  {
+    image: '/images/img03.jpg',
+    category: 'Manila Bulletin',
+    title:
+      'P26-M smuggled cigarettes declared as plastic cups seized in Port of Davao',
+    description:
+      'Close to 1,000 master cases of smuggled cigarettes worth P26 million were intercepted at the Port of Davao, the Bureau of Customs (BoC) said on Tuesday.',
+  },
+];
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout title='Home'>
+  <main class='pt-[100px]'>
+    <!-- Slider -->
+    <section class='overflow-hidden relative'>
+      <div class='swiper swiper-container w-full h-full'>
+        <div class='swiper-wrapper'>
+          {
+            slides.map((slide) => (
+              <div class='swiper-slide relative'>
+                <img
+                  src={slide.image}
+                  alt={slide.alt}
+                  class='w-full max-h-[800px] object-cover'
+                />
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+                <div class='absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-3/4'>
+                  <Button text={slide.text} link={slide.link} />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <div class='swiper-pagination'></div>
+      </div>
+    </section>
+    <!-- End Slider -->
+
+    <!-- LATEST NEWS -->
+    <section class='bg-black py-12 lg:py-16'>
+      <h1 class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'>
+        LATEST NEWS
+      </h1>
+
+      <div class='py-10'>
+        {
+          news.map((latest) => (
+            <article class='grid lg:grid-cols-2 gap-10 w-full px-6 md:w-4/5 md:mx-auto items-center mb-10'>
+              <img src={latest.image} alt={latest.title} class='object-cover' />
+
+              <div class='text-white'>
+                <span class='text-ekis italic text-xl pb-2 block'>
+                  {latest.category}
+                </span>
+                <h2 class='text-2xl font-bold pb-4'>{latest.title}</h2>
+                <p class='pb-6'>{latest.description}</p>
+                <a href='/ekis-hotspots' class='underline hover:opacity-60'>
+                  READ MORE
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <!-- Button View News Article -->
+      <div class='flex justify-center'>
+        <a
+          href='/what-is-ekis'
+          class='text-white px-5 py-2 lg:py-3 rounded-full uppercase text-sm border-4 hover:bg-white hover:text-gray-600'
+        >
+          VIEW NEWS ARTICLE
+        </a>
+      </div>
+      <!-- END Button View News Article -->
+    </section>
+    <!-- END LATEST NEWS -->
+
+    <section class='relative'>
+      <img
+        src='/images/img02.jpg'
+        alt='Image 03'
+        class='w-full object-cover max-h-[600px]'
+      />
+
+      <div
+        class='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full'
+      >
+        <h2 class='font-anton text-5xl lg:text-7xl'>NAPAPALIBUTAN NA TAYO!</h2>
+        <div class='py-4 space-x-4'>
+          <Button text='MAGFILE NG REPORT' link='/ekis-sumbungan' />
+          <Button text='EKIS HOTSPOT' link='/ekis-hotspots' />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
