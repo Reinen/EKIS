@@ -17,10 +17,10 @@ button.addEventListener('click', () => {
 const swiper = new Swiper('.swiper-container', {
   loop: true,
   spaceBetween: 30,
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: '.swiper-pagination',
     clickable: true,

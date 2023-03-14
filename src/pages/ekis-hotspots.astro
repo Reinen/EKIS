@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const news = [
+  {
+    image: '/images/img04.jpg',
+    category: 'Manila Bulletin',
+    title:
+      'BOC RAIDS SULU WAREHOUSE, SEIZES P1.4B WORTH OF SMUGGLED CIGARETTES',
+    description:
+      'The Bureau of Customs (BOC) has been on a roll in its big-time ant-smuggling campaigns as it confiscated, this time, around P1.4 billion worth of cigarettes in a raid on a warehouse in Sulu on Thursday, March 2.',
+  },
+  {
+    image: '/images/img03.jpg',
+    category: 'Manila Bulletin',
+    title:
+      'P26-M smuggled cigarettes declared as plastic cups seized in Port of Davao',
+    description:
+      'Close to 1,000 master cases of smuggled cigarettes worth P26 million were intercepted at the Port of Davao, the Bureau of Customs (BoC) said on Tuesday.',
+  },
+  {
+    image: '/images/img04.jpg',
+    category: 'Manila Bulletin',
+    title:
+      'P26-M smuggled cigarettes declared as plastic cups seized in Port of Davao',
+    description:
+      'Close to 1,000 master cases of smuggled cigarettes worth P26 million were intercepted at the Port of Davao, the Bureau of Customs (BoC) said on Tuesday.',
+  },
+  {
+    image: '/images/img03.jpg',
+    category: 'Manila Bulletin',
+    title:
+      'P26-M smuggled cigarettes declared as plastic cups seized in Port of Davao',
+    description:
+      'Close to 1,000 master cases of smuggled cigarettes worth P26 million were intercepted at the Port of Davao, the Bureau of Customs (BoC) said on Tuesday.',
+  },
+];
+---
+
+<Layout title='EKIS Hotspots'>
+  <main class='pt-[100px] flex-grow'>
+    <!-- MAP -->
+    <section class='flex justify-center bg-slate-100'>
+      <div class='relative'>
+        <img src='/images/map.png' alt='Hero Image' class='h-[800px]' />
+
+        <!-- EKIS MARK -->
+        <div class='absolute top-[220px] left-[130px]'>
+          <img src='/images/ekis01.png' alt='' />
+        </div>
+
+        <div class='absolute top-[320px] left-[170px]'>
+          <img src='/images/ekis01.png' alt='' />
+        </div>
+
+        <div class='absolute top-[440px] left-[100px]'>
+          <img src='/images/ekis01.png' alt='' />
+        </div>
+
+        <div class='absolute bottom-[120px] right-[100px]'>
+          <img src='/images/ekis01.png' alt='' />
+        </div>
+        <!--END EKIS MARK -->
+      </div>
+    </section>
+    <!-- END MAP -->
+
+    <!-- LATEST NEWS -->
+    <section class='py-12 bg-black lg:py-16'>
+      <h2 class='text-white text-[2rem] lg:text-[2.5rem] font-bold text-center'>
+        LATEST NEWS
+      </h2>
+
+      <div class='py-10'>
+        {
+          news.map((latest) => (
+            <article class='grid lg:grid-cols-2 gap-10 w-full px-6 md:w-[90%] md:mx-auto xl:w-3/4 items-center mb-10'>
+              <img src={latest.image} alt={latest.title} class='object-cover' />
+
+              <div class='text-white'>
+                <span class='block pb-2 text-lg italic text-ekis md:text-xl'>
+                  {latest.category}
+                </span>
+                <h3 class='pb-4 text-xl font-bold md:text-2xl'>
+                  {latest.title}
+                </h3>
+                <p class='pb-6 text-sm md:text-base'>{latest.description}</p>
+                <a href='/ekis-hotspots' class='underline hover:opacity-60'>
+                  READ MORE
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <!-- Button View News Article -->
+      <div class='flex justify-center'>
+        <a
+          href='/what-is-ekis'
+          class='px-10 py-3 text-sm text-white uppercase rounded-full lg:py-4 lg:px-20 bg-ekis hover:opacity-80'
+        >
+          NEXT PAGE
+        </a>
+      </div>
+      <!-- END Button View News Article -->
+    </section>
+    <!-- END LATEST NEWS -->
+
+    <section class='flex'>
+      <img src='/images/img06.jpg' alt='Image 06' class='object-cover w-full' />
+    </section>
+  </main>
+</Layout>

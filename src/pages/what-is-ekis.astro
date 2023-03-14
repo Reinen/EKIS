@@ -1,0 +1,182 @@
+---
+import Button from '../components/Button.astro';
+import Layout from '../layouts/Layout.astro';
+
+const smuggles = [
+  {
+    image: '/images/icon01.png',
+    title: 'SALOT SA EKONOMIYA',
+    description:
+      'Ang smuggling ay lalong magpapahirap sa buhay ng mga Pilipino.',
+  },
+  {
+    image: '/images/icon02.png',
+    title: 'Ninanakawan ang bayan',
+    description:
+      'Bilyong bilyong piso ang nawawala sa bayan dahil sa mga smuggled goods na nakakaapekto sa pagunlad ng bansa.',
+  },
+  {
+    image: '/images/icon03.png',
+    title: 'MAaring magdala ng MGA sakit',
+    description:
+      'Mula sa mababang kalidad ng pagkakagawa ng mga smuggled na produkto.',
+  },
+  {
+    image: '/images/icon04.png',
+    title: 'Kaakibat ng terrorismo at iba pang krimeN',
+    description:
+      'Drug trafficking, illegal na armas at pagpopondo ng mga terroristang grupo ay ilan lamang sa mga krimen sangkot ang smuggling.',
+  },
+  {
+    image: '/images/icon05.png',
+    title: 'Paralisado ang agrikultura ng bansa',
+    description:
+      'Pinapatay neto ang lokal na industriya at kabuhayan ng mga magsasaka',
+  },
+  {
+    image: '/images/icon06.png',
+    title: 'Walang ligtas sa smuggling!',
+    description:
+      'Panghabang buhay na kulong na walang piyansa ang parusa sa mga mahuhuli at lalabag dito',
+  },
+];
+---
+
+<Layout title='What is Ekis'>
+  <main class='pt-[100px] flex-grow'>
+    <!-- Hero Section -->
+    <section class='w-full'>
+      <img
+        src='/images/img03.jpg'
+        alt='Hero Image'
+        class='w-full max-h-[800px] object-cover'
+      />
+    </section>
+    <!-- END Hero Section -->
+
+    <!-- ABOUT -->
+    <section class='py-12 bg-black lg:py-16'>
+      <div
+        class='px-8 mx-auto text-white space-y-8 max-w-7xl md:px-16 lg:px-36 2xl:px-20'
+      >
+        <h2
+          class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'
+        >
+          ABOUT EKIS
+        </h2>
+
+        <h3 class='text-[1.2rem] lg:text-[1.5rem] font-bold text-center'>
+          LORE IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. MAURIS COMMODO
+          DIAM UT CONGUE VEHICULA. NUNC IPSUM IPSUM, PELLENTESQUE AT MAURIS
+          ULTRICES, PRETIUM SODALES TELLUS.
+        </h3>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+          commodo diam ut congue vehicula. Nunc ipsum ipsum, pellentesque at
+          mauris ultrices pretium sodales tellus. Aliquam egestas nibh vitae
+          dictum tincidunt. Done nec elit condimentum, tempor elit imperdiet,
+          dapibus leo. Done blandit sollicitudin elit, ac congue mauris
+          condimentum non. Aenean ante ipsum, pulvinar in porttitor sit amet,
+          accumsan id nisi. Etiam quis eleifend ligula. Mauris diam dui, iaculis
+          ac maximus eu, rhoncus et turpis. Curabitur sodales egestas felis,
+          gravida scelerisque nisl ultrices ut. In luctus ultrices nisl dictum
+          accumsan. Vestibulum sodales, dui vel blandit pulvinar, sapien magna
+          scelerisque mi, non vestibulum mi lorem a orci. Present interdum
+          faucibus elit id dignissim. Suspendisse at conque ex, eleifend
+          interdum urna. Morbi sit amet ex pretium, tempor orci eu, aliquam
+          lorem. Pellentesque velit turpis, facilisis in efficitur ut, maximus
+          id lectus.
+        </p>
+
+        <p>
+          Vivamus condimentum a sem u feugiat. Duis sit amet ex eros.
+          Pellentesque nec ipsum facilisis nunc blandit egestas ut at tellus.
+          Vestibulum leo libero, sodales quis ex ut, tincidunt interdum ipsum.
+          Pellentesque habitant morbi tristique senectus et netus et malesuada
+          fames ac turpis egestas. am auctor nec lorem id imperdiet. Morbi quis
+          velit ac mauris vulputate volutpat tincidunt ut lacus. Integer
+          efficitur diam eu dapibus consequat. Present eu nulla ut tellus
+          malesuada blandit. Quisque eu risus ultricies, tristique nunc et,
+          aliquam sapien. Nullam pretium sem dui, a interdum libero placerat a.
+        </p>
+
+        <p>
+          Present dignissim tellus vitae egestas pulvinar. Present enim est,
+          bibendum a tortor et, tempus iaculis est. Cras sit amet porttitor
+          lectus. Pellentesque vel mollis ligula, vitae luctus elit. Donec sed
+          euismod tortor. Nunc eget dictum sem, nec pretium quam. Mauris est
+          ante, blandit id tellus at, sagittis ornare velit. Phasellus feugiat
+          nibh in purus fringilla, non scelerisque ante pretium. Vestibulum
+          sagittis metus eu dapibus hendrerit. Proin faucibus eros vel pharetra
+          luctus. Fusce in maximus erat. Proin u magna a ex feugiat varius.
+        </p>
+      </div>
+    </section>
+    <!-- END ABOUT -->
+
+    <section class='relative'>
+      <img
+        src='/images/img05.jpg'
+        alt='Image 05'
+        class='w-full object-cover max-h-[400px] min-h-[150px]'
+      />
+
+      <div
+        class='absolute w-full text-center text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+      >
+        <h2 class='text-xl font-bold lg:text-2xl lg:leading-10'>
+          NOONG 2022,
+          <span class='block text-4xl lg:text-7xl sm:text-5xl font-anton'>
+            MAHIGIT 24 BILYON PISO
+          </span>
+          ANG NINAKAW NG SMUGGLERS SA BAYAN
+        </h2>
+      </div>
+    </section>
+
+    <section class='py-12 bg-slate-100 lg:py-16'>
+      <div
+        class='px-8 mx-auto space-y-10 max-w-7xl md:px-16 lg:px-24 2xl:px-10'
+      >
+        <h2
+          class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'
+        >
+          PAANO NAKAKASIRA ANG SMUGGLING SA KINABUKASAN MO?
+        </h2>
+
+        <div
+          class='grid gap-10 place-items-center sm:grid-cols-2 lg:gap-20 lg:grid-cols-3'
+        >
+          {
+            smuggles.map((smuggle) => (
+              <article class='flex flex-col items-center text-center'>
+                <img
+                  src={smuggle.image}
+                  alt={smuggle.title}
+                  class='object-contain'
+                />
+                <h3 class='text-[1.3rem] 2xl:text-[1.5rem] font-bold uppercase'>
+                  {smuggle.title}
+                </h3>
+                <p class='text-sm xl:text-base'>{smuggle.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class='relative'>
+      <img src='/images/cta01.jpg' alt='CTA' class='object-cover' />
+
+      <div
+        class='absolute right-3.5 sm:right-20 lg:right-44 transform -translate-x-0 -translate-y-1/2 top-1/2'
+      >
+        <Button text='MAGFILE NG REPORT' link='/ekis-sumbungan' />
+      </div>
+    </section>
+    <!-- END CTA -->
+  </main>
+</Layout>

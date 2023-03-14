@@ -44,21 +44,21 @@ const news = [
 ---
 
 <Layout title='Home'>
-  <main class='pt-[100px]'>
+  <main class='pt-[100px] flex-grow'>
     <!-- Slider -->
-    <section class='overflow-hidden relative'>
-      <div class='swiper swiper-container w-full h-full'>
+    <section class='relative overflow-hidden'>
+      <div class='w-full h-full swiper swiper-container'>
         <div class='swiper-wrapper'>
           {
             slides.map((slide) => (
-              <div class='swiper-slide relative'>
+              <div class='relative swiper-slide'>
                 <img
                   src={slide.image}
                   alt={slide.alt}
                   class='w-full max-h-[800px] object-cover'
                 />
 
-                <div class='absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-3/4'>
+                <div class='absolute transform -translate-x-1/2 top-3/4 left-1/2 -translate-y-3/4'>
                   <Button text={slide.text} link={slide.link} />
                 </div>
               </div>
@@ -71,7 +71,7 @@ const news = [
     <!-- End Slider -->
 
     <!-- LATEST NEWS -->
-    <section class='bg-black py-12 lg:py-16'>
+    <section class='py-12 bg-black lg:py-16'>
       <h2 class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'>
         LATEST NEWS
       </h2>
@@ -83,10 +83,10 @@ const news = [
               <img src={latest.image} alt={latest.title} class='object-cover' />
 
               <div class='text-white'>
-                <span class='text-ekis italic text-lg md:text-xl pb-2 block'>
+                <span class='block pb-2 text-lg italic text-ekis md:text-xl'>
                   {latest.category}
                 </span>
-                <h3 class='text-xl md:text-2xl font-bold pb-4'>
+                <h3 class='pb-4 text-xl font-bold md:text-2xl'>
                   {latest.title}
                 </h3>
                 <p class='pb-6 text-sm md:text-base'>{latest.description}</p>
@@ -103,7 +103,7 @@ const news = [
       <div class='flex justify-center'>
         <a
           href='/what-is-ekis'
-          class='text-white px-5 py-2 lg:py-3 rounded-full uppercase text-sm border-4 hover:bg-white hover:text-gray-600'
+          class='px-5 py-2 text-sm text-white uppercase border-4 rounded-full lg:py-3 hover:bg-white hover:text-gray-600'
         >
           VIEW NEWS ARTICLE
         </a>
@@ -115,14 +115,14 @@ const news = [
     <section class='relative'>
       <img
         src='/images/img02.jpg'
-        alt='Image 03'
+        alt='Image 02'
         class='w-full object-cover max-h-[600px]'
       />
 
       <div
-        class='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center'
+        class='absolute w-full text-center transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
       >
-        <h2 class='font-anton text-4xl sm:text-5xl lg:text-7xl'>
+        <h2 class='text-4xl lg:text-7xl sm:text-5xl font-anton'>
           NAPAPALIBUTAN NA TAYO!
         </h2>
         <div class='py-4 space-x-4'>

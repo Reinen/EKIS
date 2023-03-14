@@ -24,25 +24,29 @@ const links = [
 ---
 
 <!-- Header -->
-<header class='w-full shadow-lg fixed z-10 bg-white'>
-  <nav class='max-w-7xl mx-auto px-2 md:px-12 lg:px-28 xl:px-2'>
+<header class='fixed z-10 w-full bg-white shadow-lg'>
+  <nav class='px-2 mx-auto max-w-7xl md:px-12 lg:px-28 2xl:px-2'>
     <div class='h-[100px] flex items-center justify-between'>
       <!-- Logo -->
       <div class='flex-shrink-0'>
         <a href='/'>
-          <img src='/images/logo.png' alt='EKIS Logo' class='object-cover' />
+          <img
+            src='/images/logo.png'
+            alt='EKIS Logo'
+            class='max-h-[90px] object-contain'
+          />
         </a>
       </div>
       <!-- Burger menu -->
       <div class='flex items-center sm:hidden'>
         <button
           type='button'
-          class='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out'
+          class='inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white'
           aria-label='Main menu'
           aria-expanded='false'
         >
           <svg
-            class='h-6 w-6'
+            class='w-6 h-6'
             stroke='currentColor'
             fill='none'
             viewBox='0 0 24 24'
@@ -61,7 +65,7 @@ const links = [
           {
             links.map((link) => (
               <li>
-                <a href={link.link} class='hover:opacity-60 font-bold'>
+                <a href={link.link} class='font-bold hover:opacity-60'>
                   {link.name}
                 </a>
               </li>
@@ -74,14 +78,14 @@ const links = [
     <!-- Mobile menu, toggle classes with JavaScript -->
     <div class='hidden sm:hidden'>
       <ul
-        class='px-2 pt-2 pb-3 transition duration-300 ease-in-out text-center'
+        class='px-2 pt-2 pb-3 text-center transition duration-300 ease-in-out'
       >
         {
           links.map((link) => (
             <li>
               <a
                 href={link.link}
-                class='hover:opacity-60 font-bold block px-3 py-2 rounded-md text-base'
+                class='block px-3 py-2 text-base font-bold rounded-md hover:opacity-60'
               >
                 {link.name}
               </a>
