@@ -46,19 +46,40 @@ const news = [
 
         <!-- EKIS MARK -->
         <div class='absolute top-[220px] left-[130px]'>
-          <img src='/images/ekis01.png' alt='' />
+          <img
+            src='/images/ekis01.png'
+            alt='EKIS'
+            class='cursor-pointer'
+            data-popover-target='my-popover'
+          />
+
+          <div
+            class='fixed inset-0 z-50 hidden opacity-0'
+            data-popover-name='my-popover'
+          >
+            <div class='flex items-center justify-center min-h-screen'>
+              <div class='p-4 bg-white rounded-lg shadow-lg'>
+                <h1 class='mb-2 text-lg font-medium'>Popover Title</h1>
+                <p class='text-gray-600'>Popover content goes here.</p>
+                <button
+                  class='px-4 py-2 mt-4 font-medium text-gray-700 bg-gray-200 rounded-lg'
+                  data-close-popover>Close</button
+                >
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class='absolute top-[320px] left-[170px]'>
-          <img src='/images/ekis01.png' alt='' />
+          <img src='/images/ekis01.png' alt='EKIS' />
         </div>
 
         <div class='absolute top-[440px] left-[100px]'>
-          <img src='/images/ekis01.png' alt='' />
+          <img src='/images/ekis01.png' alt='EKIS' />
         </div>
 
         <div class='absolute bottom-[120px] right-[100px]'>
-          <img src='/images/ekis01.png' alt='' />
+          <img src='/images/ekis01.png' alt='EKIS' />
         </div>
         <!--END EKIS MARK -->
       </div>
@@ -85,7 +106,7 @@ const news = [
                   {latest.title}
                 </h3>
                 <p class='pb-6 text-sm md:text-base'>{latest.description}</p>
-                <a href='/ekis-hotspots' class='underline hover:opacity-60'>
+                <a href='/hotspots-article' class='underline hover:opacity-60'>
                   READ MORE
                 </a>
               </div>
@@ -95,13 +116,17 @@ const news = [
       </div>
 
       <!-- Button View News Article -->
-      <div class='flex justify-center'>
-        <a
-          href='/what-is-ekis'
-          class='px-10 py-3 text-sm text-white uppercase rounded-full lg:py-4 lg:px-20 bg-ekis hover:opacity-80'
+      <div class='flex justify-center space-x-5'>
+        <!-- <button
+          class='px-10 py-3 text-sm text-white uppercase rounded-full lg:px-16 bg-ekis hover:opacity-80'
+        >
+          PREVIOUS PAGE
+        </button> -->
+        <button
+          class='px-10 py-3 text-sm text-white uppercase rounded-full lg:px-16 bg-ekis hover:opacity-80'
         >
           NEXT PAGE
-        </a>
+        </button>
       </div>
       <!-- END Button View News Article -->
     </section>

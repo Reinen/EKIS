@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const contacts = [
+  {
+    category: 'Philippines National Police',
+    title: 'CRIMINAL INVESTIGATION AND DETECTION GROUP',
+    number: '0977.327.5267',
+    number2: '0951.059.3843',
+    email: 'cidgnhqcrmc@gmail.com',
+  },
+  {
+    category: 'Customer Assistance & Response Service',
+    title: 'BUREAU OF CUSTOMS',
+    number: '(02) 87056000',
+    number2: '',
+    email: 'boc.cares@customs.gov.ph',
+  },
+  {
+    category: 'Operations Private Eye',
+    title: 'PHILIPPINES DRIG ENFORCEMENT AGENCY',
+    number: '0917867732',
+    number2: '',
+    email: 'info@ddb.gob.ph',
+  },
+];
+---
+
+<Layout title='Ekis Sumbungan'>
+  <main class='pt-[100px] flex-grow'>
+    <!-- FILE A REPORT -->
+    <section class='w-full bg-slate-100'>
+      <div class='max-w-7xl mx-auto py-16'>
+        <h2
+          class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'
+        >
+          FILE A REPORT
+        </h2>
+        <h3 class='text-[1.2rem] lg:text-[1.5rem] font-bold text-center'>
+          REPORT A SMUGGLING-RELATED CRIME
+        </h3>
+        <div class='text-center space-y-5 max-w-3xl mx-auto py-4'>
+          <p>
+            We rely on the knowledge of the supply chain trade, the community
+            and the general public. Your information could lead to the detection
+            and seizure of smuggled goods, dangerous drugs, or the import and
+            export of illegal firearms, currency or wildlife.
+          </p>
+
+          <p>
+            You can help by reporting any possible unlawful or irregular
+            activity to authorities.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- END FILE A REPORT -->
+
+    <!-- FORM SUBMISSION -->
+    <section class='bg-slate-100'>
+      <div class='md:w-3/4 mx-auto'>
+        <div class='flex justify-between items-center mb-8'>
+          <div class='text-xl font-bold'>Step 1: Personal Details</div>
+          <div class='text-sm font-light'>Step 1 of 3</div>
+        </div>
+        <form
+          class='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'
+          data-step='1'
+        >
+          <div class='mb-4'>
+            <label class='block text-gray-700 font-bold mb-2' for='fullname'>
+              Full Name
+            </label>
+            <input
+              class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+              id='fullname'
+              type='text'
+              placeholder='Enter your full name'
+            />
+          </div>
+          <div class='mb-4'>
+            <label class='block text-gray-700 font-bold mb-2' for='email'>
+              Email
+            </label>
+            <input
+              class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+              id='email'
+              type='email'
+              placeholder='Enter your email address'
+            />
+          </div>
+          <div class='flex items-center justify-between'>
+            <button
+              class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+              type='button'
+            >
+              Next
+            </button>
+          </div>
+        </form>
+
+        <form
+          class='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 hidden'
+          data-step='2'
+        >
+          <div class='mb-4'>
+            <label class='block text-gray-700 font-bold mb-2' for='fullname'>
+              Full Name
+            </label>
+            <input
+              class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+              id='fullname'
+              type='text'
+              placeholder='Enter your full name'
+            />
+          </div>
+          <div class='mb-4'>
+            <label class='block text-gray-700 font-bold mb-2' for='email'>
+              Email
+            </label>
+            <input
+              class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+              id='email'
+              type='email'
+              placeholder='Enter your email address'
+            />
+          </div>
+          <div class='flex items-center justify-between'>
+            <button
+              class='btn-next bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+              type='button'
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- END FORM SUBMISSION -->
+
+    <!-- CONTACTS -->
+    <section
+      class='w-full bg-cover bg-no-repeat bg-top'
+      style="background-image: url('/images/img08.jpg');"
+    >
+      <div
+        class='max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center h-full px-10 space-x-5 py-16 space-y-10'
+      >
+        <h2 class='font-anton text-6xl lg:text-8xl text-white'>
+          KANINO PWEDE<br /> MAGSUMBONG?
+        </h2>
+
+        <div class='max-w-xl space-y-7'>
+          {
+            contacts.map((contact) => (
+              <div class='text-white space-y-1'>
+                <span>{contact.category}</span>
+                <h3 class='text-xl lg:text-2xl'>{contact.title}</h3>
+                <div class='font-thin'>
+                  <span class='block'>{contact.number}</span>
+                  {contact.number2 && (
+                    <span class='block'>{contact.number2}</span>
+                  )}
+                  <span class='block'>{contact.email}</span>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+    <!-- END CONTACTS -->
+  </main>
+</Layout>

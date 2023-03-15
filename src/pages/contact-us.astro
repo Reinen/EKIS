@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Newsletter from '../components/Newsletter.astro';
+---
+
+<Layout title='Contact Us'>
+  <main class='pt-[100px] flex-grow'>
+    <!-- Hero Section -->
+    <section class='w-full'>
+      <img
+        src='/images/img06.jpg'
+        alt='Hero Image'
+        class='w-full max-h-[800px] object-cover'
+      />
+    </section>
+    <!-- END Hero Section -->
+
+    <!-- Contact Info -->
+    <section class='py-12 bg-black lg:pt-16 lg:pb-36'>
+      <div
+        class='px-8 mx-auto text-white space-y-8 max-w-7xl md:px-16 lg:px-36 2xl:px-20'
+      >
+        <h2
+          class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'
+        >
+          CONTACT US
+        </h2>
+
+        <div class='grid sm:grid-cols-2 gap-10'>
+          <div class='space-y-5 lg:space-y-12'>
+            <h3 class='text-[1.2rem] lg:text-[1.7rem] font-bold'>
+              FOR MESSAGES, CONCERNS OR INQUIRIES:
+            </h3>
+            <p class='text-[1rem] lg:text-[1.1rem] font-bold'>
+              <span class='block'>EKIS SA SMUGGLING</span>
+              <span class='block font-light'>Email: email@ekis.com</span>
+            </p>
+            <p class="class='text-[1rem] lg:text-[1.1rem] font-bold">
+              <span class='block'
+                >NCUP - Nicotine Consumers United of the Philippines</span
+              >
+              <span class='block font-light'
+                >Phone: (033) 500-4430 / 0916 925 9217</span
+              >
+            </p>
+          </div>
+
+          <div class='space-y-5'>
+            <h3 class='text-[1.2rem] lg:text-[1.7rem] font-bold'>
+              FOLLOW US ON SOCIAL MEDIA:
+            </h3>
+
+            <div class='flex flex-row space-x-3'>
+              <a
+                href=''
+                class='bg-white rounded-full w-10 h-10 p-2 inline-flex justify-center'
+              >
+                <img
+                  src='/images/facebook-f.svg'
+                  alt='Facebook'
+                  class='object-contain'
+                />
+              </a>
+              <a
+                href=''
+                class='bg-white rounded-full w-10 h-10 p-2 inline-flex justify-center'
+              >
+                <img
+                  src='/images/twitter.svg'
+                  alt='Twitter'
+                  class='object-contain'
+                />
+              </a>
+
+              <a
+                href=''
+                class='bg-white rounded-full w-10 h-10 p-2 inline-flex justify-center'
+              >
+                <img
+                  src='/images/youtube.svg'
+                  alt='Youtube'
+                  class='object-contain'
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- END Contact Info -->
+
+  <Newsletter />
+</Layout>

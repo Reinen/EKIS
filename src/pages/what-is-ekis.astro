@@ -1,6 +1,6 @@
 ---
-import Button from '../components/Button.astro';
 import Layout from '../layouts/Layout.astro';
+import Newsletter from '../components/Newsletter.astro';
 
 const smuggles = [
   {
@@ -55,7 +55,7 @@ const smuggles = [
     <!-- END Hero Section -->
 
     <!-- ABOUT -->
-    <section class='py-12 bg-black lg:py-16'>
+    <section class='py-12 bg-black lg:py-16 lg:pb-24'>
       <div
         class='px-8 mx-auto text-white space-y-8 max-w-7xl md:px-16 lg:px-36 2xl:px-20'
       >
@@ -167,16 +167,6 @@ const smuggles = [
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class='relative'>
-      <img src='/images/cta01.jpg' alt='CTA' class='object-cover' />
-
-      <div
-        class='absolute right-3.5 sm:right-20 lg:right-44 transform -translate-x-0 -translate-y-1/2 top-1/2'
-      >
-        <Button text='MAGFILE NG REPORT' link='/ekis-sumbungan' />
-      </div>
-    </section>
-    <!-- END CTA -->
+    <Newsletter />
   </main>
 </Layout>
