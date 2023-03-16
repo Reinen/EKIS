@@ -1,6 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Newsletter from '../components/Newsletter.astro';
+
+const socials = [
+  {
+    image: '/images/facebook-f.svg',
+    title: 'Facebook',
+    links: '//facebook.com',
+  },
+  {
+    image: '/images/twitter.svg',
+    title: 'Twitter',
+    links: '//twitter.com',
+  },
+  {
+    image: '/images/youtube.svg',
+    title: 'Youtube',
+    links: '//youtube.com',
+  },
+];
 ---
 
 <Layout title='Contact Us'>
@@ -51,37 +69,21 @@ import Newsletter from '../components/Newsletter.astro';
             </h3>
 
             <div class='flex flex-row space-x-3'>
-              <a
-                href=''
-                class='bg-white rounded-full w-10 h-10 p-2 inline-flex justify-center'
-              >
-                <img
-                  src='/images/facebook-f.svg'
-                  alt='Facebook'
-                  class='object-contain'
-                />
-              </a>
-              <a
-                href=''
-                class='bg-white rounded-full w-10 h-10 p-2 inline-flex justify-center'
-              >
-                <img
-                  src='/images/twitter.svg'
-                  alt='Twitter'
-                  class='object-contain'
-                />
-              </a>
-
-              <a
-                href=''
-                class='bg-white rounded-full w-10 h-10 p-2 inline-flex justify-center'
-              >
-                <img
-                  src='/images/youtube.svg'
-                  alt='Youtube'
-                  class='object-contain'
-                />
-              </a>
+              {
+                socials.map((social) => (
+                  <a
+                    href={social.links}
+                    target='_blank'
+                    class='bg-white rounded-full w-10 h-10 p-2 inline-flex justify-center hover:opacity-80'
+                  >
+                    <img
+                      src={social.image}
+                      alt={social.title}
+                      class='object-contain'
+                    />
+                  </a>
+                ))
+              }
             </div>
           </div>
         </div>

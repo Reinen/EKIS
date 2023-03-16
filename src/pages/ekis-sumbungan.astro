@@ -29,7 +29,7 @@ const contacts = [
 <Layout title='Ekis Sumbungan'>
   <main class='pt-[100px] flex-grow'>
     <!-- FILE A REPORT -->
-    <section class='w-full bg-slate-100'>
+    <section class='w-full bg-gray-200'>
       <div class='max-w-7xl mx-auto py-16'>
         <h2
           class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'
@@ -57,90 +57,395 @@ const contacts = [
     <!-- END FILE A REPORT -->
 
     <!-- FORM SUBMISSION -->
-    <section class='bg-slate-100'>
-      <div class='md:w-3/4 mx-auto'>
-        <div class='flex justify-between items-center mb-8'>
-          <div class='text-xl font-bold'>Step 1: Personal Details</div>
-          <div class='text-sm font-light'>Step 1 of 3</div>
+    <section class='bg-gray-200 relative'>
+      <form class='relative mb-32' style='height: 404px;'>
+        <div
+          data-form='user'
+          class='absolute top-0 left-0 flex flex-col w-full min-w-0 p-4 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border h-auto opacity-100 visible'
+          data-active=''
+        >
+          <h5 class='mb-0 font-bold dark:text-white'>About me</h5>
+          <p class='mb-0 text-sm leading-normal'>Mandatory informations</p>
+          <div>
+            <div class='flex flex-wrap mt-4 -mx-3'>
+              <div class='w-full max-w-full px-3 flex-0 sm:w-6/12'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='First Name'>First Name</label
+                >
+                <input
+                  type='text'
+                  name='First Name'
+                  placeholder='eg. Michael'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+              <div class='w-full max-w-full px-3 mt-4 flex-0 sm:mt-0 sm:w-6/12'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Last Name'>Last Name</label
+                >
+                <input
+                  type='text'
+                  name='Last Name'
+                  placeholder='eg. Prior'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+            </div>
+            <div class='flex flex-wrap mt-4 -mx-3'>
+              <div class='w-full max-w-full px-3 flex-0 sm:w-6/12'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Company'>Company</label
+                >
+                <input
+                  type='text'
+                  name='Company'
+                  placeholder='eg. Creative Tim'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+              <div class='w-full max-w-full px-3 mt-4 flex-0 sm:mt-0 sm:w-6/12'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Email Address'>Email Address</label
+                >
+                <input
+                  type='email'
+                  name='Email Address'
+                  placeholder='eg. soft@dashboard.com'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+            </div>
+            <div class='flex flex-wrap mt-4 -mx-3'>
+              <div class='w-full max-w-full px-3 flex-0 sm:w-6/12'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Password'>Password</label
+                >
+                <input
+                  type='password'
+                  name='Password'
+                  placeholder='******'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+              <div class='w-full max-w-full px-3 mt-4 flex-0 sm:mt-0 sm:w-6/12'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Repeat Password'>Repeat Password</label
+                >
+                <input
+                  type='password'
+                  name='Repeat Password'
+                  placeholder='******'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+            </div>
+            <div class='flex mt-6'>
+              <button
+                type='button'
+                aria-controls='address'
+                next-form-btn=''
+                class='inline-block px-6 py-3 mb-0 ml-auto text-xs font-bold text-right text-white uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 leading-pro tracking-tight-rem bg-150 bg-x-25'
+                data-ol-has-click-handler=''>Next</button
+              >
+            </div>
+          </div>
         </div>
-        <form
-          class='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'
-          data-step='1'
+        <div
+          data-form='addata-dress'
+          class='absolute top-0 left-0 flex flex-col w-full min-w-0 p-4 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border h-0 opacity-0 invisible'
         >
-          <div class='mb-4'>
-            <label class='block text-gray-700 font-bold mb-2' for='fullname'>
-              Full Name
-            </label>
-            <input
-              class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-              id='fullname'
-              type='text'
-              placeholder='Enter your full name'
-            />
+          <h5 class='font-bold dark:text-white'>Address</h5>
+          <div>
+            <div class='flex flex-wrap mt-4 -mx-3'>
+              <div class='w-full max-w-full px-3 flex-0'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Address 1'>Address 1</label
+                >
+                <input
+                  type='text'
+                  name='Address 1'
+                  placeholder='eg. Street 111'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+            </div>
+            <div class='flex flex-wrap mt-4 -mx-3'>
+              <div class='w-full max-w-full px-3 flex-0'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Address 2'>Address 2</label
+                >
+                <input
+                  type='text'
+                  name='Address 2'
+                  placeholder='eg. Street 221'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+            </div>
+            <div class='flex flex-wrap mt-4 -mx-3'>
+              <div class='w-full max-w-full px-3 flex-0 sm:w-6/12'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='City'>City</label
+                >
+                <input
+                  type='text'
+                  name='City'
+                  placeholder='eg. Tokyo'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+              <div class='w-6/12 max-w-full px-3 mt-4 flex-0 sm:mt-0 sm:w-3/12'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='State'>State</label
+                >
+                <div
+                  class='choices'
+                  data-type='select-one'
+                  tabindex='0'
+                  role='combobox'
+                  aria-autocomplete='list'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                >
+                  <div class='choices__inner'>
+                    <select
+                      choices-select=''
+                      name='State'
+                      class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none choices__input'
+                      hidden=''
+                      tabindex='-1'
+                      data-choice='active'
+                      ><option value='...'>...</option></select
+                    ><div class='choices__list choices__list--single'>
+                      <div
+                        class='choices__item choices__item--selectable'
+                        data-item=''
+                        data-id='1'
+                        data-value='...'
+                        data-custom-properties='null'
+                        aria-selected='true'
+                      >
+                        ...
+                      </div>
+                    </div>
+                  </div><div
+                    class='choices__list choices__list--dropdown'
+                    aria-expanded='false'
+                  >
+                    <input
+                      type='text'
+                      class='choices__input choices__input--cloned'
+                      autocomplete='off'
+                      autocapitalize='off'
+                      spellcheck='false'
+                      role='textbox'
+                      aria-autocomplete='list'
+                      aria-label='false'
+                      placeholder=''
+                    /><div class='choices__list' role='listbox'>
+                      <div
+                        id='choices--State-qs-item-choice-1'
+                        class='choices__item choices__item--choice is-selected choices__item--selectable is-highlighted'
+                        role='option'
+                        data-choice=''
+                        data-id='1'
+                        data-value='...'
+                        data-select-text='Press to select'
+                        data-choice-selectable=''
+                        aria-selected='true'
+                      >
+                        ...
+                      </div><div
+                        id='choices--State-qs-item-choice-2'
+                        class='choices__item choices__item--choice choices__item--selectable'
+                        role='option'
+                        data-choice=''
+                        data-id='2'
+                        data-value='1'
+                        data-select-text='Press to select'
+                        data-choice-selectable=''
+                      >
+                        State 1
+                      </div><div
+                        id='choices--State-qs-item-choice-3'
+                        class='choices__item choices__item--choice choices__item--selectable'
+                        role='option'
+                        data-choice=''
+                        data-id='3'
+                        data-value='2'
+                        data-select-text='Press to select'
+                        data-choice-selectable=''
+                      >
+                        State 2
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='w-6/12 max-w-full px-3 mt-4 flex-0 sm:mt-0 sm:w-3/12'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Zip'>Zip</label
+                >
+                <input
+                  type='text'
+                  name='Zip'
+                  placeholder='7 letters'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+            </div>
+            <div class='flex mt-6'>
+              <button
+                type='button'
+                aria-controls='user'
+                prev-form-btn=''
+                class='inline-block px-6 py-3 mb-0 text-xs font-bold text-right uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs bg-gradient-to-tl from-gray-400 to-gray-100 leading-pro tracking-tight-rem bg-150 bg-x-25 text-slate-800'
+                data-ol-has-click-handler=''>Prev</button
+              >
+              <button
+                type='button'
+                aria-controls='socials'
+                next-form-btn=''
+                class='inline-block px-6 py-3 mb-0 ml-auto text-xs font-bold text-right text-white uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 leading-pro tracking-tight-rem bg-150 bg-x-25'
+                data-ol-has-click-handler=''>Next</button
+              >
+            </div>
           </div>
-          <div class='mb-4'>
-            <label class='block text-gray-700 font-bold mb-2' for='email'>
-              Email
-            </label>
-            <input
-              class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-              id='email'
-              type='email'
-              placeholder='Enter your email address'
-            />
+        </div>
+        <div
+          data-form='socials'
+          class='absolute top-0 left-0 flex flex-col w-full min-w-0 p-4 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border h-0 opacity-0 invisible'
+        >
+          <h5 class='font-bold dark:text-white'>Socials</h5>
+          <div>
+            <div class='flex flex-wrap mt-4 -mx-3'>
+              <div class='w-full max-w-full px-3 flex-0'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Twitter Handle'>Twitter Handle</label
+                >
+                <input
+                  type='text'
+                  name='Twitter Handle'
+                  placeholder='@soft'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+            </div>
+            <div class='flex flex-wrap mt-4 -mx-3'>
+              <div class='w-full max-w-full px-3 flex-0'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Facebook Account'>Facebook Account</label
+                >
+                <input
+                  type='text'
+                  name='Facebook Account'
+                  placeholder='https://...'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+            </div>
+            <div class='flex flex-wrap mt-4 -mx-3'>
+              <div class='w-full max-w-full px-3 flex-0'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Instagram Account'>Instagram Account</label
+                >
+                <input
+                  type='text'
+                  name='Instagram Account'
+                  placeholder='https://...'
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+            </div>
+            <div class='flex mt-6'>
+              <button
+                type='button'
+                aria-controls='address'
+                prev-form-btn=''
+                class='inline-block px-6 py-3 mb-0 text-xs font-bold text-right uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs bg-gradient-to-tl from-gray-400 to-gray-100 leading-pro tracking-tight-rem bg-150 bg-x-25 text-slate-800'
+                data-ol-has-click-handler=''>Prev</button
+              >
+              <button
+                type='button'
+                aria-controls='profile'
+                next-form-btn=''
+                class='inline-block px-6 py-3 mb-0 ml-auto text-xs font-bold text-right text-white uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 leading-pro tracking-tight-rem bg-150 bg-x-25'
+                data-ol-has-click-handler=''>Next</button
+              >
+            </div>
           </div>
-          <div class='flex items-center justify-between'>
-            <button
-              class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
-              type='button'
-            >
-              Next
-            </button>
-          </div>
-        </form>
+        </div>
+        <div
+          data-form='prdata-ofile'
+          class='absolute top-0 left-0 flex flex-col w-full min-w-0 p-4 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border h-0 opacity-0 invisible'
+        >
+          <h5 class='font-bold dark:text-white'>Profile</h5>
+          <div>
+            <div class='flex flex-wrap mt-4 -mx-3'>
+              <div class='w-full max-w-full px-3 flex-0'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Public Email'>Public Email</label
+                >
+                <input
+                  type='text'
+                  name='Public Email'
+                  placeholder="Use an address you don't use frequently."
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
 
-        <form
-          class='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 hidden'
-          data-step='2'
-        >
-          <div class='mb-4'>
-            <label class='block text-gray-700 font-bold mb-2' for='fullname'>
-              Full Name
-            </label>
-            <input
-              class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-              id='fullname'
-              type='text'
-              placeholder='Enter your full name'
-            />
+              <div class='w-full max-w-full px-3 mt-4 flex-0'>
+                <label
+                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
+                  for='Bio'>Bio</label
+                >
+                <textarea
+                  name='Bio'
+                  rows='5'
+                  placeholder="Say a few words about who you are or what you're working on."
+                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 min-h-unset text-sm leading-5.6 ease block h-auto w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                ></textarea>
+              </div>
+            </div>
+            <div class='flex mt-6'>
+              <button
+                type='button'
+                aria-controls='socials'
+                prev-form-btn=''
+                class='inline-block px-6 py-3 mb-0 text-xs font-bold text-right uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs bg-gradient-to-tl from-gray-400 to-gray-100 leading-pro tracking-tight-rem bg-150 bg-x-25 text-slate-800'
+                data-ol-has-click-handler=''>Prev</button
+              >
+              <button
+                type='button'
+                send-form-btn=''
+                class='inline-block px-6 py-3 mb-0 ml-auto text-xs font-bold text-right text-white uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 leading-pro tracking-tight-rem bg-150 bg-x-25'
+                data->Send</button
+              >
+            </div>
           </div>
-          <div class='mb-4'>
-            <label class='block text-gray-700 font-bold mb-2' for='email'>
-              Email
-            </label>
-            <input
-              class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-              id='email'
-              type='email'
-              placeholder='Enter your email address'
-            />
-          </div>
-          <div class='flex items-center justify-between'>
-            <button
-              class='btn-next bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
-              type='button'
-            >
-              Next
-            </button>
-          </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </section>
     <!-- END FORM SUBMISSION -->
 
     <!-- CONTACTS -->
     <section
-      class='w-full bg-cover bg-no-repeat bg-top'
+      class='w-full bg-cover bg-no-repeat bg-center'
       style="background-image: url('/images/img08.jpg');"
     >
       <div
