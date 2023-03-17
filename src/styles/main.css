@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 .swiper-pagination-bullet {
-  @apply bg-white/50 w-[15px] h-[15px];
+  @apply bg-white/50 w-[10px] h-[10px] md:w-[15px] md:h-[15px];
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {

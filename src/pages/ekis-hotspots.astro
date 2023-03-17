@@ -132,8 +132,15 @@ const news = [
     </section>
     <!-- END LATEST NEWS -->
 
-    <section class='flex'>
-      <img src='/images/img06.jpg' alt='Image 06' class='object-cover w-full' />
+    <section class='w-full'>
+      <picture>
+        <source media='(min-width: 640px)' srcset='/images/img06.jpg' />
+        <img
+          src='/images/mobile-img06.jpg'
+          alt='Image 06'
+          class='object-cover w-full max-h-[700px]'
+        />
+      </picture>
     </section>
   </main>
 </Layout>

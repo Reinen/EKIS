@@ -7,17 +7,20 @@ import Button from '../components/Button.astro';
   <main class='pt-[100px] flex-grow'>
     <!-- Hero Section -->
     <section class='w-full'>
-      <img
-        src='/images/img04.jpg'
-        alt='Hero Image'
-        class='w-full max-h-[800px] object-cover'
-      />
+      <picture>
+        <source media='(min-width: 640px)' srcset='/images/img04.jpg' />
+        <img
+          src='/images/mobile-img04.jpg'
+          alt='Hero Image'
+          class='object-cover w-full max-h-[800px]'
+        />
+      </picture>
     </section>
     <!-- END Hero Section -->
 
     <section class='py-12 bg-black lg:py-16'>
       <div
-        class='text-white max-w-7xl mx-auto px-8 md:px-16 lg:px-36 2xl:px-20'
+        class='px-8 mx-auto text-white max-w-7xl md:px-16 lg:px-36 2xl:px-20'
       >
         <span class='block pb-2 text-lg italic text-ekis md:text-xl'>
           Manila Bulletin
@@ -25,7 +28,7 @@ import Button from '../components/Button.astro';
         <h3 class='pb-4 text-2xl font-bold md:text-3xl lg:text-4xl'>
           BOC RAIDS SULU WAREHOUSE, SEIZES P1.4B WORTH OF SMUGGLED CIGARETTES
         </h3>
-        <p class='text-gray-500 italic'>
+        <p class='italic text-gray-500'>
           Published March 3, 2023, 9:28 AM
           <span class='block'>by Aaron Recuenco</span>
         </p>

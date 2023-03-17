@@ -3,11 +3,14 @@ import Button from '../components/Button.astro';
 ---
 
 <!-- CTA -->
-<section class='relative'>
-  <img src='/images/cta01.jpg' alt='CTA' class='object-cover' />
+<section class='relative space-y-10 bg-black sm:space-y-0'>
+  <picture>
+    <source media='(min-width: 640px)' srcset='/images/cta01.jpg' />
+    <img src='/images/mobile-cta01.jpg' alt='CTA' class='object-cover w-full' />
+  </picture>
 
   <div
-    class='absolute right-3.5 sm:right-20 lg:right-44 transform -translate-x-0 -translate-y-1/2 top-1/2'
+    class='text-center sm:absolute right-3.5 sm:right-20 lg:right-44 transform -translate-x-0 -translate-y-1/2 top-1/2'
   >
     <Button text='MAGFILE NG REPORT' link='/ekis-sumbungan' />
   </div>

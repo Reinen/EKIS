@@ -29,17 +29,17 @@ const contacts = [
 <Layout title='Ekis Sumbungan'>
   <main class='pt-[100px] flex-grow'>
     <!-- FILE A REPORT -->
-    <section class='w-full bg-gray-200'>
-      <div class='max-w-7xl mx-auto py-16'>
+    <section class='w-full bg-[#e8e8e8]'>
+      <div class='px-8 py-10 mx-auto md:py-16 max-w-7xl'>
         <h2
-          class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'
+          class='text-ekis text-[1.5rem] lg:text-[2.5rem] font-bold text-center'
         >
           FILE A REPORT
         </h2>
         <h3 class='text-[1.2rem] lg:text-[1.5rem] font-bold text-center'>
           REPORT A SMUGGLING-RELATED CRIME
         </h3>
-        <div class='text-center space-y-5 max-w-3xl mx-auto py-4'>
+        <div class='max-w-3xl py-4 mx-auto space-y-5 text-center'>
           <p>
             We rely on the knowledge of the supply chain trade, the community
             and the general public. Your information could lead to the detection
@@ -57,11 +57,25 @@ const contacts = [
     <!-- END FILE A REPORT -->
 
     <!-- FORM SUBMISSION -->
-    <section class='bg-gray-200 relative'>
-      <form class='relative mb-32' style='height: 404px;'>
+    <section class='relative bg-[#e8e8e8]'>
+      <!-- STEPS -->
+      <div class='flex space-x-3'>
+        <div>
+          <h2>STEP 1: Details</h2>
+        </div>
+        <div>
+          <h2>STEP 2: Information</h2>
+        </div>
+        <div>
+          <h2>STEP 3: Confirmation</h2>
+        </div>
+      </div>
+      <!-- END STEPS -->
+
+      <!-- <form class='relative mb-32' style='height: 404px;'>
         <div
           data-form='user'
-          class='absolute top-0 left-0 flex flex-col w-full min-w-0 p-4 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border h-auto opacity-100 visible'
+          class='absolute top-0 left-0 flex flex-col visible w-full h-auto min-w-0 p-4 break-words bg-white border-0 shadow-xl opacity-100 dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border'
           data-active=''
         >
           <h5 class='mb-0 font-bold dark:text-white'>About me</h5>
@@ -158,7 +172,7 @@ const contacts = [
         </div>
         <div
           data-form='addata-dress'
-          class='absolute top-0 left-0 flex flex-col w-full min-w-0 p-4 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border h-0 opacity-0 invisible'
+          class='absolute top-0 left-0 flex flex-col invisible w-full h-0 min-w-0 p-4 break-words bg-white border-0 shadow-xl opacity-0 dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border'
         >
           <h5 class='font-bold dark:text-white'>Address</h5>
           <div>
@@ -325,7 +339,7 @@ const contacts = [
         </div>
         <div
           data-form='socials'
-          class='absolute top-0 left-0 flex flex-col w-full min-w-0 p-4 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border h-0 opacity-0 invisible'
+          class='absolute top-0 left-0 flex flex-col invisible w-full h-0 min-w-0 p-4 break-words bg-white border-0 shadow-xl opacity-0 dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border'
         >
           <h5 class='font-bold dark:text-white'>Socials</h5>
           <div>
@@ -391,7 +405,7 @@ const contacts = [
         </div>
         <div
           data-form='prdata-ofile'
-          class='absolute top-0 left-0 flex flex-col w-full min-w-0 p-4 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border h-0 opacity-0 invisible'
+          class='absolute top-0 left-0 flex flex-col invisible w-full h-0 min-w-0 p-4 break-words bg-white border-0 shadow-xl opacity-0 dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border'
         >
           <h5 class='font-bold dark:text-white'>Profile</h5>
           <div>
@@ -439,41 +453,48 @@ const contacts = [
             </div>
           </div>
         </div>
-      </form>
+      </form> -->
     </section>
     <!-- END FORM SUBMISSION -->
 
-    <!-- CONTACTS -->
-    <section
-      class='w-full bg-cover bg-no-repeat bg-center'
-      style="background-image: url('/images/img08.jpg');"
-    >
-      <div
-        class='max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center h-full px-10 space-x-5 py-16 space-y-10'
-      >
-        <h2 class='font-anton text-6xl lg:text-8xl text-white'>
-          KANINO PWEDE<br /> MAGSUMBONG?
-        </h2>
+    <!-- HOTLINES -->
+    <section class='relative'>
+      <img
+        src='/images/img08.jpg'
+        alt='Image 08'
+        class='w-full object-cover min-h-[750px] lg:min-h-[600px] lg:max-h-[600px]'
+      />
 
-        <div class='max-w-xl space-y-7'>
-          {
-            contacts.map((contact) => (
-              <div class='text-white space-y-1'>
-                <span>{contact.category}</span>
-                <h3 class='text-xl lg:text-2xl'>{contact.title}</h3>
-                <div class='font-thin'>
-                  <span class='block'>{contact.number}</span>
-                  {contact.number2 && (
-                    <span class='block'>{contact.number2}</span>
-                  )}
-                  <span class='block'>{contact.email}</span>
+      <div
+        class='absolute w-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+      >
+        <div
+          class='flex flex-col items-center justify-between h-full px-4 mx-auto space-x-5 space-y-10 lg:px-10 max-w-7xl lg:flex-row'
+        >
+          <h2 class='text-white text-7xl font-anton lg:text-8xl'>
+            KANINO PWEDE<br /> MAGSUMBONG?
+          </h2>
+
+          <div class='max-w-xl space-y-7'>
+            {
+              contacts.map((contact) => (
+                <div class='space-y-1 text-white'>
+                  <span>{contact.category}</span>
+                  <h3 class='text-xl lg:text-2xl'>{contact.title}</h3>
+                  <div class='font-thin'>
+                    <span class='block'>{contact.number}</span>
+                    {contact.number2 && (
+                      <span class='block'>{contact.number2}</span>
+                    )}
+                    <span class='block'>{contact.email}</span>
+                  </div>
                 </div>
-              </div>
-            ))
-          }
+              ))
+            }
+          </div>
         </div>
       </div>
     </section>
-    <!-- END CONTACTS -->
+    <!-- END HOTLINES -->
   </main>
 </Layout>

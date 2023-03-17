@@ -52,11 +52,14 @@ const news = [
           {
             slides.map((slide) => (
               <div class='relative swiper-slide'>
-                <img
-                  src={slide.image}
-                  alt={slide.alt}
-                  class='w-full max-h-[800px] object-cover'
-                />
+                <picture>
+                  <source media='(min-width: 640px)' srcset={slide.image} />
+                  <img
+                    src='/images/mobile-img01.jpg'
+                    alt={slide.alt}
+                    class='w-full max-h-[800px] object-cover'
+                  />
+                </picture>
 
                 <div class='absolute transform -translate-x-1/2 top-3/4 left-1/2 -translate-y-3/4'>
                   <Button text={slide.text} link={slide.link} />
@@ -103,7 +106,7 @@ const news = [
       <div class='flex justify-center'>
         <a
           href='/what-is-ekis'
-          class='px-5 py-2 text-sm text-white uppercase border-2 rounded-full lg:py-3 hover:bg-white hover:text-gray-600'
+          class='px-8 py-3 text-sm text-white uppercase border-2 rounded-full lg:py-3 hover:bg-white hover:text-gray-600'
         >
           VIEW NEWS ARTICLE
         </a>
@@ -116,16 +119,16 @@ const news = [
       <img
         src='/images/img02.jpg'
         alt='Image 02'
-        class='w-full object-cover max-h-[600px]'
+        class='w-full object-cover min-h-[400px] max-h-[600px]'
       />
 
       <div
         class='absolute w-full text-center transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
       >
-        <h2 class='text-4xl lg:text-7xl sm:text-5xl font-anton'>
-          NAPAPALIBUTAN NA TAYO!
-        </h2>
-        <div class='py-4 space-x-4'>
+        <h2 class='text-6xl lg:text-7xl font-anton'>NAPAPALIBUTAN NA TAYO!</h2>
+        <div
+          class='grid max-w-xs py-4 mx-auto space-y-4 md:space-y-0 md:space-x-4 md:grid-cols-2 md:max-w-lg'
+        >
           <Button text='MAGFILE NG REPORT' link='/ekis-sumbungan' />
           <Button text='EKIS HOTSPOTS' link='/ekis-hotspots' />
         </div>

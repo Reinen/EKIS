@@ -9,6 +9,8 @@ const menu = document.querySelector('.hidden.sm\\:hidden');
 button.addEventListener('click', () => {
   menu.classList.toggle('hidden');
   menu.classList.toggle('block');
+  menu.classList.toggle('overflow-hidden');
+  menu.classList.toggle('overflow-auto');
   const expanded = button.getAttribute('aria-expanded') === 'true' || false;
   button.setAttribute('aria-expanded', !expanded);
 });

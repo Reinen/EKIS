@@ -41,12 +41,12 @@ const links = [
       <div class='flex items-center sm:hidden'>
         <button
           type='button'
-          class='inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white'
+          class='inline-flex items-center justify-center p-2 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-400 focus:outline-none focus:bg-gray-400 focus:text-white'
           aria-label='Main menu'
           aria-expanded='false'
         >
           <svg
-            class='w-6 h-6'
+            class='w-10 h-10'
             stroke='currentColor'
             fill='none'
             viewBox='0 0 24 24'
@@ -76,23 +76,20 @@ const links = [
     </div>
 
     <!-- Mobile menu, toggle classes with JavaScript -->
-    <div class='hidden sm:hidden'>
-      <ul
-        class='px-2 pt-2 pb-3 text-center transition duration-300 ease-in-out'
-      >
-        {
-          links.map((link) => (
-            <li>
-              <a
-                href={link.link}
-                class='py-2 text-base font-bold hover:opacity-60'
-              >
-                {link.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+    <div class='hidden h-screen overflow-auto sm:hidden'>
+      <div class='flex justify-center transition duration-300 ease-in-out'>
+        <ul class='px-2 pt-16 pb-3 space-y-8'>
+          {
+            links.map((link) => (
+              <li>
+                <a href={link.link} class='text-lg font-bold hover:opacity-60'>
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   </nav>
 </header>

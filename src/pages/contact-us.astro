@@ -25,18 +25,21 @@ const socials = [
   <main class='pt-[100px] flex-grow'>
     <!-- Hero Section -->
     <section class='w-full'>
-      <img
-        src='/images/img06.jpg'
-        alt='Hero Image'
-        class='w-full max-h-[800px] object-cover'
-      />
+      <picture>
+        <source media='(min-width: 640px)' srcset='/images/img06.jpg' />
+        <img
+          src='/images/mobile-img06.jpg'
+          alt='Hero Image'
+          class='w-full max-h-[800px] object-cover'
+        />
+      </picture>
     </section>
     <!-- END Hero Section -->
 
     <!-- Contact Info -->
     <section class='py-12 bg-black lg:pt-16 lg:pb-36'>
       <div
-        class='px-8 mx-auto text-white space-y-8 max-w-7xl md:px-16 lg:px-36 2xl:px-20'
+        class='px-8 mx-auto space-y-8 text-white max-w-7xl md:px-16 lg:px-36 2xl:px-20'
       >
         <h2
           class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'
@@ -44,7 +47,7 @@ const socials = [
           CONTACT US
         </h2>
 
-        <div class='grid sm:grid-cols-2 gap-10'>
+        <div class='grid gap-10 sm:grid-cols-2'>
           <div class='space-y-5 lg:space-y-12'>
             <h3 class='text-[1.2rem] lg:text-[1.7rem] font-bold'>
               FOR MESSAGES, CONCERNS OR INQUIRIES:
@@ -74,7 +77,7 @@ const socials = [
                   <a
                     href={social.links}
                     target='_blank'
-                    class='bg-white rounded-full w-10 h-10 p-2 inline-flex justify-center hover:opacity-80'
+                    class='inline-flex justify-center w-10 h-10 p-2 bg-white rounded-full hover:opacity-80'
                   >
                     <img
                       src={social.image}

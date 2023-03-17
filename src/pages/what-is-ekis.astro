@@ -46,18 +46,21 @@ const smuggles = [
   <main class='pt-[100px] flex-grow'>
     <!-- Hero Section -->
     <section class='w-full'>
-      <img
-        src='/images/img03.jpg'
-        alt='Hero Image'
-        class='w-full max-h-[800px] object-cover'
-      />
+      <picture>
+        <source media='(min-width: 640px)' srcset='/images/img03.jpg' />
+        <img
+          src='/images/mobile-img03.jpg'
+          alt='CTA'
+          class='w-full max-h-[800px] object-cover'
+        />
+      </picture>
     </section>
     <!-- END Hero Section -->
 
     <!-- ABOUT -->
     <section class='py-12 bg-black lg:py-16 lg:pb-24'>
       <div
-        class='px-8 mx-auto text-white space-y-8 max-w-7xl md:px-16 lg:px-36 2xl:px-20'
+        class='px-8 mx-auto space-y-8 text-white max-w-7xl md:px-16 lg:px-36 2xl:px-20'
       >
         <h2
           class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'
@@ -119,25 +122,23 @@ const smuggles = [
       <img
         src='/images/img05.jpg'
         alt='Image 05'
-        class='w-full object-cover max-h-[400px] min-h-[150px]'
+        class='w-full object-cover max-h-[400px] min-h-[300px]'
       />
 
       <div
-        class='absolute w-full text-center text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+        class='absolute w-full px-10 text-center text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
       >
-        <h2 class='text-xl font-bold lg:text-2xl lg:leading-10'>
+        <h2 class='text-lg font-bold leading-10 sm:text-2xl'>
           NOONG 2022,
-          <span class='block text-4xl lg:text-7xl sm:text-5xl font-anton'>
-            MAHIGIT 24 BILYON PISO
-          </span>
+          <span class='block text-7xl font-anton'> MAHIGIT 24 BILYON PISO</span>
           ANG NINAKAW NG SMUGGLERS SA BAYAN
         </h2>
       </div>
     </section>
 
-    <section class='py-12 bg-gray-200 lg:py-16'>
+    <section class='py-12 bg-[#e8e8e8] lg:py-16'>
       <div
-        class='px-8 mx-auto space-y-10 max-w-7xl md:px-16 lg:px-24 2xl:px-10'
+        class='px-8 mx-auto space-y-16 max-w-7xl md:px-16 lg:px-24 2xl:px-10'
       >
         <h2
           class='text-ekis text-[2rem] lg:text-[2.5rem] font-bold text-center'
@@ -145,18 +146,18 @@ const smuggles = [
           PAANO NAKAKASIRA ANG SMUGGLING SA KINABUKASAN MO?
         </h2>
 
-        <div
-          class='grid gap-10 place-items-center sm:grid-cols-2 lg:gap-20 lg:grid-cols-3'
-        >
+        <div class='grid grid-cols-2 gap-10 lg:gap-20 lg:grid-cols-3'>
           {
             smuggles.map((smuggle) => (
               <article class='flex flex-col items-center text-center'>
-                <img
-                  src={smuggle.image}
-                  alt={smuggle.title}
-                  class='object-contain'
-                />
-                <h3 class='text-[1.3rem] 2xl:text-[1.5rem] font-bold uppercase'>
+                <div class='flex w-[100px] h-[100px] mb-5'>
+                  <img
+                    src={smuggle.image}
+                    alt={smuggle.title}
+                    class='object-contain'
+                  />
+                </div>
+                <h3 class='text-[1.2rem] md:text-[1.4rem] 2xl:text-[1.5rem] font-bold uppercase'>
                   {smuggle.title}
                 </h3>
                 <p class='text-sm xl:text-base'>{smuggle.description}</p>
