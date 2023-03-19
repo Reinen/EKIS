@@ -57,403 +57,245 @@ const contacts = [
     <!-- END FILE A REPORT -->
 
     <!-- FORM SUBMISSION -->
-    <section class='relative bg-[#e8e8e8]'>
+    <section class='relative bg-[#e8e8e8] lg:pb-5 lg:px-20'>
       <!-- STEPS -->
-      <div class='flex space-x-3'>
-        <div>
-          <h2>STEP 1: Details</h2>
+      <div
+        class='multisteps grid lg:grid-cols-3 gap-5 max-w-7xl mx-auto place-items-center lg:px-24'
+      >
+        <div class='hidden lg:inline active' data-step='1'>
+          <h2 class='text-2xl py-3 px-10 whitespace-nowrap'>STEP 1: Details</h2>
         </div>
-        <div>
-          <h2>STEP 2: Information</h2>
+        <div class='hidden lg:inline' data-step='2'>
+          <h2 class='text-2xl py-3 px-10 whitespace-nowrap'>
+            STEP 2: Information
+          </h2>
         </div>
-        <div>
-          <h2>STEP 3: Confirmation</h2>
+        <div class='hidden lg:inline' data-step='3'>
+          <h2 class='text-2xl py-3 px-10 whitespace-nowrap'>
+            STEP 3: Confirmation
+          </h2>
         </div>
       </div>
       <!-- END STEPS -->
 
-      <!-- <form class='relative mb-32' style='height: 404px;'>
-        <div
-          data-form='user'
-          class='absolute top-0 left-0 flex flex-col visible w-full h-auto min-w-0 p-4 break-words bg-white border-0 shadow-xl opacity-100 dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border'
-          data-active=''
-        >
-          <h5 class='mb-0 font-bold dark:text-white'>About me</h5>
-          <p class='mb-0 text-sm leading-normal'>Mandatory informations</p>
-          <div>
-            <div class='flex flex-wrap mt-4 -mx-3'>
-              <div class='w-full max-w-full px-3 flex-0 sm:w-6/12'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='First Name'>First Name</label
-                >
-                <input
-                  type='text'
-                  name='First Name'
-                  placeholder='eg. Michael'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
-              <div class='w-full max-w-full px-3 mt-4 flex-0 sm:mt-0 sm:w-6/12'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Last Name'>Last Name</label
-                >
-                <input
-                  type='text'
-                  name='Last Name'
-                  placeholder='eg. Prior'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
-            </div>
-            <div class='flex flex-wrap mt-4 -mx-3'>
-              <div class='w-full max-w-full px-3 flex-0 sm:w-6/12'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Company'>Company</label
-                >
-                <input
-                  type='text'
-                  name='Company'
-                  placeholder='eg. Creative Tim'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
-              <div class='w-full max-w-full px-3 mt-4 flex-0 sm:mt-0 sm:w-6/12'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Email Address'>Email Address</label
-                >
-                <input
-                  type='email'
-                  name='Email Address'
-                  placeholder='eg. soft@dashboard.com'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
-            </div>
-            <div class='flex flex-wrap mt-4 -mx-3'>
-              <div class='w-full max-w-full px-3 flex-0 sm:w-6/12'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Password'>Password</label
-                >
-                <input
-                  type='password'
-                  name='Password'
-                  placeholder='******'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
-              <div class='w-full max-w-full px-3 mt-4 flex-0 sm:mt-0 sm:w-6/12'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Repeat Password'>Repeat Password</label
-                >
-                <input
-                  type='password'
-                  name='Repeat Password'
-                  placeholder='******'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
-            </div>
-            <div class='flex mt-6'>
-              <button
-                type='button'
-                aria-controls='address'
-                next-form-btn=''
-                class='inline-block px-6 py-3 mb-0 ml-auto text-xs font-bold text-right text-white uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 leading-pro tracking-tight-rem bg-150 bg-x-25'
-                data-ol-has-click-handler=''>Next</button
+      <!-- FORM -->
+      <div
+        class='max-w-7xl mx-auto mt-7 lg:my-7 bg-white py-10 px-5 lg:py-14 lg:px-10 lg:rounded-3xl'
+      >
+        <form class='w-full' id='form-wizard'>
+          <!-- STEP 1 -->
+          <div class='space-y-8 active' data-form='1'>
+            <div class='px-3 grid lg:grid-cols-3 items-center'>
+              <label class='text-xl lg:text-[1.4rem] font-bold'>
+                Ano ang isusumbong mo?</label
               >
+              <select
+                class='lg:col-span-2 text-xl lg:text-[1.4rem] w-full mt-0 px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+              >
+                <option disabled hidden selected>Please Select</option>
+                <option>ILLICIT TRADE - Pagbebenta ng pekeng sigarilyo</option>
+                <option>Wedding</option>
+                <option>Birthday</option>
+              </select>
             </div>
-          </div>
-        </div>
-        <div
-          data-form='addata-dress'
-          class='absolute top-0 left-0 flex flex-col invisible w-full h-0 min-w-0 p-4 break-words bg-white border-0 shadow-xl opacity-0 dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border'
-        >
-          <h5 class='font-bold dark:text-white'>Address</h5>
-          <div>
-            <div class='flex flex-wrap mt-4 -mx-3'>
-              <div class='w-full max-w-full px-3 flex-0'>
+
+            <div class='px-3 grid lg:grid-cols-3 items-center'>
+              <label class='text-xl lg:text-[1.4rem] font-bold'>
+                Kailan nangyari ang insidente?</label
+              >
+              <input
+                type='text'
+                class='text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                placeholder=''
+              />
+
+              <div class='grid lg:grid-cols-3 items-center mt-8 lg:mt-0'>
                 <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Address 1'>Address 1</label
+                  class='text-xl lg:text-[1.4rem] font-bold lg:text-right lg:mr-4'
+                >
+                  Oras:</label
                 >
                 <input
-                  type='text'
-                  name='Address 1'
-                  placeholder='eg. Street 111'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                  type='time'
+                  class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                  placeholder=''
                 />
               </div>
             </div>
-            <div class='flex flex-wrap mt-4 -mx-3'>
-              <div class='w-full max-w-full px-3 flex-0'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Address 2'>Address 2</label
-                >
+
+            <div class='px-3 grid lg:grid-cols-3 items-center'>
+              <label class='text-xl lg:text-[1.4rem] font-bold'>
+                Location kung saan naganap?
+              </label>
+              <div class='lg:col-span-2 relative'>
                 <input
                   type='text'
-                  name='Address 2'
-                  placeholder='eg. Street 221'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
+                  class='text-xl pr-7 lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                  placeholder=''
                 />
-              </div>
-            </div>
-            <div class='flex flex-wrap mt-4 -mx-3'>
-              <div class='w-full max-w-full px-3 flex-0 sm:w-6/12'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='City'>City</label
-                >
-                <input
-                  type='text'
-                  name='City'
-                  placeholder='eg. Tokyo'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
-              <div class='w-6/12 max-w-full px-3 mt-4 flex-0 sm:mt-0 sm:w-3/12'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='State'>State</label
-                >
-                <div
-                  class='choices'
-                  data-type='select-one'
-                  tabindex='0'
-                  role='combobox'
-                  aria-autocomplete='list'
-                  aria-haspopup='true'
-                  aria-expanded='false'
-                >
-                  <div class='choices__inner'>
-                    <select
-                      choices-select=''
-                      name='State'
-                      class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none choices__input'
-                      hidden=''
-                      tabindex='-1'
-                      data-choice='active'
-                      ><option value='...'>...</option></select
-                    ><div class='choices__list choices__list--single'>
-                      <div
-                        class='choices__item choices__item--selectable'
-                        data-item=''
-                        data-id='1'
-                        data-value='...'
-                        data-custom-properties='null'
-                        aria-selected='true'
-                      >
-                        ...
-                      </div>
-                    </div>
-                  </div><div
-                    class='choices__list choices__list--dropdown'
-                    aria-expanded='false'
-                  >
-                    <input
-                      type='text'
-                      class='choices__input choices__input--cloned'
-                      autocomplete='off'
-                      autocapitalize='off'
-                      spellcheck='false'
-                      role='textbox'
-                      aria-autocomplete='list'
-                      aria-label='false'
-                      placeholder=''
-                    /><div class='choices__list' role='listbox'>
-                      <div
-                        id='choices--State-qs-item-choice-1'
-                        class='choices__item choices__item--choice is-selected choices__item--selectable is-highlighted'
-                        role='option'
-                        data-choice=''
-                        data-id='1'
-                        data-value='...'
-                        data-select-text='Press to select'
-                        data-choice-selectable=''
-                        aria-selected='true'
-                      >
-                        ...
-                      </div><div
-                        id='choices--State-qs-item-choice-2'
-                        class='choices__item choices__item--choice choices__item--selectable'
-                        role='option'
-                        data-choice=''
-                        data-id='2'
-                        data-value='1'
-                        data-select-text='Press to select'
-                        data-choice-selectable=''
-                      >
-                        State 1
-                      </div><div
-                        id='choices--State-qs-item-choice-3'
-                        class='choices__item choices__item--choice choices__item--selectable'
-                        role='option'
-                        data-choice=''
-                        data-id='3'
-                        data-value='2'
-                        data-select-text='Press to select'
-                        data-choice-selectable=''
-                      >
-                        State 2
-                      </div>
-                    </div>
-                  </div>
+                <div class='w-6 h-6 absolute right-0 top-3'>
+                  <img
+                    src='/images/location01.png'
+                    alt='location icon'
+                    class='object-contain'
+                  />
                 </div>
               </div>
-              <div class='w-6/12 max-w-full px-3 mt-4 flex-0 sm:mt-0 sm:w-3/12'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Zip'>Zip</label
-                >
-                <input
-                  type='text'
-                  name='Zip'
-                  placeholder='7 letters'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
             </div>
-            <div class='flex mt-6'>
-              <button
-                type='button'
-                aria-controls='user'
-                prev-form-btn=''
-                class='inline-block px-6 py-3 mb-0 text-xs font-bold text-right uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs bg-gradient-to-tl from-gray-400 to-gray-100 leading-pro tracking-tight-rem bg-150 bg-x-25 text-slate-800'
-                data-ol-has-click-handler=''>Prev</button
-              >
-              <button
-                type='button'
-                aria-controls='socials'
-                next-form-btn=''
-                class='inline-block px-6 py-3 mb-0 ml-auto text-xs font-bold text-right text-white uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 leading-pro tracking-tight-rem bg-150 bg-x-25'
-                data-ol-has-click-handler=''>Next</button
-              >
-            </div>
-          </div>
-        </div>
-        <div
-          data-form='socials'
-          class='absolute top-0 left-0 flex flex-col invisible w-full h-0 min-w-0 p-4 break-words bg-white border-0 shadow-xl opacity-0 dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border'
-        >
-          <h5 class='font-bold dark:text-white'>Socials</h5>
-          <div>
-            <div class='flex flex-wrap mt-4 -mx-3'>
-              <div class='w-full max-w-full px-3 flex-0'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Twitter Handle'>Twitter Handle</label
-                >
-                <input
-                  type='text'
-                  name='Twitter Handle'
-                  placeholder='@soft'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
-            </div>
-            <div class='flex flex-wrap mt-4 -mx-3'>
-              <div class='w-full max-w-full px-3 flex-0'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Facebook Account'>Facebook Account</label
-                >
-                <input
-                  type='text'
-                  name='Facebook Account'
-                  placeholder='https://...'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
-            </div>
-            <div class='flex flex-wrap mt-4 -mx-3'>
-              <div class='w-full max-w-full px-3 flex-0'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Instagram Account'>Instagram Account</label
-                >
-                <input
-                  type='text'
-                  name='Instagram Account'
-                  placeholder='https://...'
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
-            </div>
-            <div class='flex mt-6'>
-              <button
-                type='button'
-                aria-controls='address'
-                prev-form-btn=''
-                class='inline-block px-6 py-3 mb-0 text-xs font-bold text-right uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs bg-gradient-to-tl from-gray-400 to-gray-100 leading-pro tracking-tight-rem bg-150 bg-x-25 text-slate-800'
-                data-ol-has-click-handler=''>Prev</button
-              >
-              <button
-                type='button'
-                aria-controls='profile'
-                next-form-btn=''
-                class='inline-block px-6 py-3 mb-0 ml-auto text-xs font-bold text-right text-white uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 leading-pro tracking-tight-rem bg-150 bg-x-25'
-                data-ol-has-click-handler=''>Next</button
-              >
-            </div>
-          </div>
-        </div>
-        <div
-          data-form='prdata-ofile'
-          class='absolute top-0 left-0 flex flex-col invisible w-full h-0 min-w-0 p-4 break-words bg-white border-0 shadow-xl opacity-0 dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border'
-        >
-          <h5 class='font-bold dark:text-white'>Profile</h5>
-          <div>
-            <div class='flex flex-wrap mt-4 -mx-3'>
-              <div class='w-full max-w-full px-3 flex-0'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Public Email'>Public Email</label
-                >
-                <input
-                  type='text'
-                  name='Public Email'
-                  placeholder="Use an address you don't use frequently."
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                />
-              </div>
 
-              <div class='w-full max-w-full px-3 mt-4 flex-0'>
-                <label
-                  class='mb-2 ml-1 text-xs font-bold text-slate-700 dark:text-white/80'
-                  for='Bio'>Bio</label
+            <div class='px-3 grid lg:grid-cols-3 space-y-3 lg:space-y-0'>
+              <label class='text-xl lg:text-[1.4rem] font-bold'>
+                Ikwento kung ano ang nangyari
+              </label>
+              <textarea
+                class='lg:col-span-2 text-xl lg:text-[1.4rem] p-3 mt-0 block w-full border-2 border-gray-300 focus:ring-0 focus:border-black'
+                rows='5'></textarea>
+            </div>
+
+            <div class='px-3 grid lg:grid-cols-3 space-y-3 lg:space-y-0'>
+              <label class='text-xl lg:text-[1.4rem] font-bold'>
+                Mag-upload ng picture ng insidente (optional)
+              </label>
+              <div
+                class='lg:col-span-2 w-full p-4 border border-dashed border-gray-400 rounded-lg'
+              >
+                <div class='text-gray-500'>
+                  <div class='flex justify-between'>
+                    <span>Drag and drop your images here</span>
+                    <label
+                      for='image-upload'
+                      class='px-4 py-2 text-white bg-ekis rounded-lg cursor-pointer'
+                    >
+                      Browse
+                    </label>
+                  </div>
+
+                  <input
+                    id='image-upload'
+                    type='file'
+                    accept='image/*'
+                    multiple
+                    class='hidden'
+                  />
+                </div>
+                <div
+                  id='image-preview-container'
+                  class='mt-4 flex flex-wrap justify-center'
                 >
-                <textarea
-                  name='Bio'
-                  rows='5'
-                  placeholder="Say a few words about who you are or what you're working on."
-                  class='focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 min-h-unset text-sm leading-5.6 ease block h-auto w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none'
-                ></textarea>
+                </div>
               </div>
             </div>
-            <div class='flex mt-6'>
+
+            <!-- NEXT BUTTON -->
+            <div class='flex justify-center lg:justify-end'>
               <button
                 type='button'
-                aria-controls='socials'
-                prev-form-btn=''
-                class='inline-block px-6 py-3 mb-0 text-xs font-bold text-right uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs bg-gradient-to-tl from-gray-400 to-gray-100 leading-pro tracking-tight-rem bg-150 bg-x-25 text-slate-800'
-                data-ol-has-click-handler=''>Prev</button
+                class='next-btn px-10 py-3 text-sm text-white uppercase rounded-full lg:px-16 bg-ekis hover:opacity-80'
               >
+                NEXT
+              </button>
+            </div>
+            <!-- END NEXT BUTTON -->
+          </div>
+          <!-- END STEP 1 -->
+
+          <!-- STEP 2 -->
+          <div class='space-y-8 hidden' data-form='2'>
+            <div class='px-3 grid lg:grid-cols-3 items-center'>
+              <label class='text-xl lg:text-[1.4rem] font-bold'>
+                Pangalan ng Informant:</label
+              >
+              <input
+                type='text'
+                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                placeholder='Last Name, First Name'
+              />
+            </div>
+
+            <div class='px-3 grid lg:grid-cols-3 items-center'>
+              <label class='text-xl lg:text-[1.4rem] font-bold'>
+                Contact Number:</label
+              >
+              <input
+                type='text'
+                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                placeholder='(+63) XXX XXX XXXX'
+              />
+            </div>
+
+            <div class='px-3 grid lg:grid-cols-3 items-center'>
+              <label class='text-xl lg:text-[1.4rem] font-bold'>
+                Email Address:</label
+              >
+              <input
+                type='text'
+                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                placeholder='e.g. juandelacruz@rmail.com'
+              />
+            </div>
+
+            <div class='px-3 grid lg:grid-cols-3 items-center'>
+              <span class='text-xl lg:text-[1.4rem] font-bold'> </span>
+              <div class='lg:col-span-2'>
+                <input
+                  type='checkbox'
+                  id='agree'
+                  class='border-gray-300 border-2 text-black focus:border-gray-300 focus:ring-black'
+                />
+                <label class='ml-2' for='agree'>
+                  By checking this box I agree to the Terms & Conditions and
+                  Privacy Policy and all information given is correct and
+                  verified.
+                </label>
+              </div>
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+            <div class='flex justify-center lg:justify-end space-x-3'>
               <button
                 type='button'
-                send-form-btn=''
-                class='inline-block px-6 py-3 mb-0 ml-auto text-xs font-bold text-right text-white uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 leading-pro tracking-tight-rem bg-150 bg-x-25'
-                data->Send</button
+                class='prev-btn px-10 py-3 text-sm uppercase rounded-full lg:px-16 border-2 hover:opacity-80 border-black'
               >
+                BACK
+              </button>
+              <button
+                type='button'
+                class='next-btn px-10 py-3 text-sm text-white uppercase rounded-full lg:px-16 bg-ekis hover:opacity-80'
+              >
+                SUBMIT
+              </button>
+            </div>
+            <!-- NEXT BUTTON -->
+          </div>
+          <!-- END STEP 2 -->
+
+          <!-- STEP 3 -->
+          <div class='space-y-8 hidden' data-form='3'>
+            <div class='flex justify-center'>
+              <img
+                src='/images/check01.png'
+                alt='Check'
+                class='object-contain h-[100px]'
+              />
+            </div>
+
+            <div class='max-w-4xl mx-auto text-center space-y-4'>
+              <h3 class='text-ekis text-xl lg:text-[1.4rem] font-bold'>
+                MARAMING SALAMAT SA INYONG REPORT!
+              </h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
+                exercitationem earum tempora quam, adipisci laborum ipsum?
+                Sequi, natus ea repellat facilis dolor illum quam maxime et,
+                tenetur dicta nisi tempore! Nostrum cupiditate voluptatem quis
+                quidem corporis esse a debitis vitae.
+              </p>
             </div>
           </div>
-        </div>
-      </form> -->
+          <!-- END STEP 3 -->
+        </form>
+      </div>
+      <!-- END FORM -->
     </section>
     <!-- END FORM SUBMISSION -->
 
@@ -469,7 +311,7 @@ const contacts = [
         class='absolute w-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
       >
         <div
-          class='flex flex-col items-center justify-between h-full px-2 mx-auto space-x-5 space-y-10 lg:px-10 max-w-7xl lg:flex-row'
+          class='flex flex-col items-center justify-between h-full px-2 mx-auto space-x-5 space-y-10 lg:px-32 max-w-7xl lg:flex-row'
         >
           <h2 class='text-white text-6xl md:text-7xl font-anton lg:text-8xl'>
             KANINO PWEDE<br /> MAGSUMBONG?
@@ -480,7 +322,7 @@ const contacts = [
               contacts.map((contact) => (
                 <div class='space-y-1 text-white'>
                   <span>{contact.category}</span>
-                  <h3 class='text-xl lg:text-2xl'>{contact.title}</h3>
+                  <h3 class='text-xl lg:text-[1.4rem]'>{contact.title}</h3>
                   <div class='font-thin'>
                     <span class='block'>{contact.number}</span>
                     {contact.number2 && (

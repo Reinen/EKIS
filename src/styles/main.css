@@ -1,9 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+html {
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
 .swiper-pagination-bullet {
   @apply bg-white/50 w-[10px] h-[10px] md:w-[15px] md:h-[15px];
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   @apply bg-white;
+}
+
+.menu {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.multisteps .active {
+  @apply bg-ekis text-white rounded-2xl relative block;
+}
+
+.multisteps .active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  border-width: 20px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
 }
