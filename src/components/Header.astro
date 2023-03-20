@@ -25,7 +25,7 @@ const links = [
 
 <!-- Header -->
 <header class='fixed z-10 w-full bg-white shadow-lg'>
-  <nav class='px-2 mx-auto max-w-7xl md:px-12 lg:px-28 2xl:px-2'>
+  <nav class='px-4 mx-auto max-w-7xl md:px-12 lg:px-28 2xl:px-2'>
     <div class='h-[100px] flex items-center justify-between'>
       <!-- Logo -->
       <div class='flex-shrink-0'>
@@ -39,24 +39,10 @@ const links = [
       </div>
       <!-- Burger menu -->
       <div class='flex items-center sm:hidden'>
-        <button
-          type='button'
-          class='inline-flex items-center justify-center p-2 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-400 focus:outline-none focus:bg-gray-400 focus:text-white'
-          aria-label='Main menu'
-          aria-expanded='false'
-        >
-          <svg
-            class='w-10 h-10'
-            stroke='currentColor'
-            fill='none'
-            viewBox='0 0 24 24'
-          >
-            <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              stroke-width='2'
-              d='M4 6h16M4 12h16M4 18h16'></path>
-          </svg>
+        <button class='burger-menu focus:outline-none' aria-label='Main menu'>
+          <span class='bar top-bar'></span>
+          <span class='bar middle-bar'></span>
+          <span class='bar bottom-bar'></span>
         </button>
       </div>
       <!-- Links -->

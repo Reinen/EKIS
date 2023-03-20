@@ -41,6 +41,7 @@ html {
   }
 }
 
+/* MULTISTEPS FORM ACTIVE STATE */
 .multisteps .active {
   @apply bg-ekis text-white rounded-2xl relative block;
 }
@@ -54,4 +55,49 @@ html {
   border-width: 20px;
   border-style: solid;
   border-color: transparent transparent #fff transparent;
+}
+
+/* BURGER MENU */
+.burger-menu {
+  width: 30px;
+  height: 25px;
+  position: relative;
+}
+
+.burger-menu .bar {
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  display: block;
+  position: absolute;
+  left: 0;
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+.burger-menu .top-bar {
+  top: 0;
+}
+
+.burger-menu .middle-bar {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger-menu .bottom-bar {
+  bottom: 0;
+}
+
+.burger-menu.x .top-bar {
+  transform: translateY(8px) rotate(45deg);
+  top: 2.5px;
+}
+
+.burger-menu.x .middle-bar {
+  opacity: 0;
+}
+
+.burger-menu.x .bottom-bar {
+  transform: translateY(-8px) rotate(-45deg);
+  bottom: 2.5px;
 }
