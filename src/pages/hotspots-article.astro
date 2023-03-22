@@ -20,12 +20,12 @@ import Button from '../components/Button.astro';
 
     <section class='py-12 bg-black lg:py-16'>
       <div
-        class='px-5 mx-auto text-white max-w-7xl md:px-16 lg:px-36 2xl:px-20'
+        class='prose px-5 mx-auto text-white max-w-7xl md:px-16 lg:px-36 2xl:px-20'
       >
-        <span class='block pb-2 text-lg italic text-ekis md:text-xl'>
+        <span class='block text-lg italic text-ekis md:text-xl'>
           Manila Bulletin
         </span>
-        <h3 class='pb-4 text-2xl font-bold md:text-3xl lg:text-4xl'>
+        <h3 class='text-2xl font-bold md:text-3xl lg:text-4xl text-white mt-2'>
           BOC RAIDS SULU WAREHOUSE, SEIZES P1.4B WORTH OF SMUGGLED CIGARETTES
         </h3>
         <p class='italic text-gray-500'>
@@ -33,11 +33,9 @@ import Button from '../components/Button.astro';
           <span class='block'>by Aaron Recuenco</span>
         </p>
 
-        <div class='py-12'>
-          <hr class='border-ekis' />
-        </div>
+        <hr class='border-ekis' />
 
-        <div class='space-y-6'>
+        <div>
           <p>
             The Bureau of Customs (BOC) has been on a roll in its big-time
             ant-smuggling campaigns as it confiscated, this time, around P1.4
@@ -157,10 +155,9 @@ import Button from '../components/Button.astro';
             in a warehouse in Binondo, Manila.
           </p>
         </div>
-
-        <div class='flex justify-center py-16'>
-          <Button text='BACK TO NEWS ARTICLES' link='/ekis-hotspots' />
-        </div>
+      </div>
+      <div class='flex justify-center py-16'>
+        <Button text='BACK TO NEWS ARTICLES' link='/ekis-hotspots' />
       </div>
     </section>
   </main>

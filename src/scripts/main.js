@@ -194,7 +194,7 @@ import 'https://unpkg.com/swiper/swiper-bundle.min.js';
       button.addEventListener('click', handleNext);
     });
 
-    showStep(currentStep);
+    // showStep(currentStep);
   };
 
   // Wait for the DOM to finish loading before running the script

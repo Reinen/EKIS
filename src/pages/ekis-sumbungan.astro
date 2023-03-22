@@ -63,15 +63,17 @@ const contacts = [
         class='multisteps grid lg:grid-cols-3 gap-5 max-w-7xl mx-auto place-items-center lg:px-14 xl:px-24'
       >
         <div class='hidden lg:inline active' data-step='1'>
-          <h2 class='text-2xl py-3 px-10 whitespace-nowrap'>STEP 1: Details</h2>
+          <h2 class='text-xl md:text-2xl py-3 px-10 whitespace-nowrap'>
+            STEP 1: Details
+          </h2>
         </div>
         <div class='hidden lg:inline' data-step='2'>
-          <h2 class='text-2xl py-3 px-10 whitespace-nowrap'>
+          <h2 class='text-xl md:text-2xl py-3 px-10 whitespace-nowrap'>
             STEP 2: Information
           </h2>
         </div>
         <div class='hidden lg:inline' data-step='3'>
-          <h2 class='text-2xl py-3 px-10 whitespace-nowrap'>
+          <h2 class='text-xl md:text-2xl py-3 px-10 whitespace-nowrap'>
             STEP 3: Confirmation
           </h2>
         </div>
@@ -220,6 +222,7 @@ const contacts = [
                 type='text'
                 class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
                 placeholder='(+63) XXX XXX XXXX'
+                inputmode='tel'
               />
             </div>
 
@@ -231,6 +234,7 @@ const contacts = [
                 type='text'
                 class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
                 placeholder='e.g. juandelacruz@gmail.com'
+                inputmode='email'
               />
             </div>
 
@@ -304,16 +308,16 @@ const contacts = [
       <img
         src='/images/img08.jpg'
         alt='Image 08'
-        class='w-full object-cover min-h-[750px] lg:min-h-[600px] lg:max-h-[600px]'
+        class='w-full object-cover h-[750px] lg:max-h-[600px]'
       />
 
       <div
         class='absolute w-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
       >
         <div
-          class='flex flex-col items-center justify-between h-full px-2 mx-auto space-x-5 space-y-10 lg:px-20 xl:px-32 max-w-7xl lg:flex-row'
+          class='flex flex-col items-center justify-between h-full px-2 mx-auto space-x-5 space-y-10 lg:px-16 max-w-7xl lg:flex-row'
         >
-          <h2 class='text-white text-6xl md:text-7xl font-anton lg:text-8xl'>
+          <h2 class='text-white text-6xl sm:text-7xl font-anton lg:text-8xl'>
             KANINO PWEDE<br /> MAGSUMBONG?
           </h2>
 
