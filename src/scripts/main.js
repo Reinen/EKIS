@@ -122,6 +122,7 @@ import 'https://unpkg.com/swiper/swiper-bundle.min.js';
             'bg-white',
             'font-bold',
             'px-2',
+            'rounded-bl-lg',
           );
           deleteButton.addEventListener('click', () => {
             imagePreview.remove();

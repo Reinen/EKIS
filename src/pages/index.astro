@@ -57,7 +57,7 @@ const news = [
                   <img
                     src='/images/mobile-img01.jpg'
                     alt={slide.alt}
-                    class='w-full max-h-[800px] object-cover'
+                    class='w-full max-h-[600px] 2xl:max-h-[800px] object-cover'
                   />
                 </picture>
 
@@ -85,15 +85,20 @@ const news = [
             <article class='grid lg:grid-cols-2 gap-5 w-full px-6 md:px-0 md:w-[90%] md:mx-auto xl:w-3/4 items-center mb-10'>
               <img src={latest.image} alt={latest.title} class='object-cover' />
 
-              <div class='text-white'>
-                <span class='block pb-2 text-lg italic text-ekis md:text-xl'>
+              <div class='prose max-w-7xl'>
+                <span class='block text-lg italic text-ekis md:text-xl'>
                   {latest.category}
                 </span>
-                <h3 class='pb-4 text-xl font-bold md:text-2xl'>
+                <h3 class='mt-2 text-xl text-slate-50 md:text-2xl'>
                   {latest.title}
                 </h3>
-                <p class='pb-6 text-sm md:text-base'>{latest.description}</p>
-                <a href='/hotspots-article' class='underline hover:opacity-60'>
+                <p class='text-sm md:text-base text-slate-50'>
+                  {latest.description}
+                </p>
+                <a
+                  href='/hotspots-article'
+                  class='underline text-slate-50 hover:opacity-60'
+                >
                   READ MORE
                 </a>
               </div>
@@ -106,7 +111,7 @@ const news = [
       <div class='flex justify-center'>
         <a
           href='/ekis-hotspots'
-          class='px-8 py-3 text-sm text-white uppercase border-2 rounded-full lg:py-3 hover:bg-white hover:text-gray-600'
+          class='px-8 py-3 text-sm uppercase border-2 rounded-full text-slate-50 lg:py-3 hover:bg-slate-100 hover:text-slate-600'
         >
           VIEW NEWS ARTICLE
         </a>

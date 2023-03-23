@@ -5,11 +5,11 @@ body {
 }
 
 .swiper-pagination-bullet {
-  @apply bg-white/50 w-[10px] h-[10px] md:w-[15px] md:h-[15px];
+  @apply bg-slate-50/50 w-[10px] h-[10px] md:w-[15px] md:h-[15px];
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  @apply bg-white;
+  @apply bg-slate-50;
 }
 
 .menu {
@@ -43,7 +43,7 @@ body {
 
 /* MULTISTEPS FORM ACTIVE STATE */
 .multisteps .active {
-  @apply bg-ekis text-white rounded-2xl relative block;
+  @apply relative block text-white bg-ekis rounded-2xl;
 }
 
 .multisteps .active::after {

@@ -30,16 +30,14 @@ const contacts = [
   <main class='pt-[100px] flex-grow'>
     <!-- FILE A REPORT -->
     <section class='w-full bg-[#e8e8e8]'>
-      <div class='px-8 py-10 mx-auto md:py-16 max-w-7xl'>
-        <h2
-          class='text-ekis text-[1.5rem] lg:text-[2.5rem] font-bold text-center'
-        >
+      <div class='px-8 py-10 mx-auto prose md:py-16 max-w-7xl'>
+        <h2 class='text-ekis text-[1.5rem] lg:text-[2.5rem] text-center mb-2'>
           FILE A REPORT
         </h2>
-        <h3 class='text-[1.2rem] lg:text-[1.5rem] font-bold text-center'>
+        <h3 class='text-[1.2rem] lg:text-[1.5rem] text-center'>
           REPORT A SMUGGLING-RELATED CRIME
         </h3>
-        <div class='max-w-3xl py-4 mx-auto space-y-5 text-center'>
+        <div class='max-w-3xl mx-auto text-center'>
           <p>
             We rely on the knowledge of the supply chain trade, the community
             and the general public. Your information could lead to the detection
@@ -60,20 +58,20 @@ const contacts = [
     <section class='relative bg-[#e8e8e8] lg:pb-5 lg:px-20'>
       <!-- STEPS -->
       <div
-        class='multisteps grid lg:grid-cols-3 gap-5 max-w-7xl mx-auto place-items-center lg:px-14 xl:px-24'
+        class='grid gap-5 mx-auto multisteps lg:grid-cols-3 max-w-7xl place-items-center lg:px-14 xl:px-24'
       >
         <div class='hidden lg:inline active' data-step='1'>
-          <h2 class='text-xl md:text-2xl py-3 px-10 whitespace-nowrap'>
+          <h2 class='px-10 py-3 text-xl md:text-2xl whitespace-nowrap'>
             STEP 1: Details
           </h2>
         </div>
         <div class='hidden lg:inline' data-step='2'>
-          <h2 class='text-xl md:text-2xl py-3 px-10 whitespace-nowrap'>
+          <h2 class='px-10 py-3 text-xl md:text-2xl whitespace-nowrap'>
             STEP 2: Information
           </h2>
         </div>
         <div class='hidden lg:inline' data-step='3'>
-          <h2 class='text-xl md:text-2xl py-3 px-10 whitespace-nowrap'>
+          <h2 class='px-10 py-3 text-xl md:text-2xl whitespace-nowrap'>
             STEP 3: Confirmation
           </h2>
         </div>
@@ -82,12 +80,12 @@ const contacts = [
 
       <!-- FORM -->
       <div
-        class='max-w-7xl mx-auto mt-7 lg:my-7 bg-white py-10 px-5 lg:py-14 lg:px-10 lg:rounded-3xl'
+        class='px-5 py-10 mx-auto bg-white max-w-7xl mt-7 lg:my-7 lg:py-14 lg:px-10 lg:rounded-3xl'
       >
         <form class='w-full' id='form-wizard'>
           <!-- STEP 1 -->
           <div class='space-y-8 active' data-form='1'>
-            <div class='px-3 grid lg:grid-cols-3 items-center'>
+            <div class='grid items-center px-3 lg:grid-cols-3'>
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Ano ang isusumbong mo?</label
               >
@@ -101,7 +99,7 @@ const contacts = [
               </select>
             </div>
 
-            <div class='px-3 grid lg:grid-cols-3 items-center'>
+            <div class='grid items-center px-3 lg:grid-cols-3'>
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Kailan nangyari ang insidente?</label
               >
@@ -111,7 +109,7 @@ const contacts = [
                 placeholder=''
               />
 
-              <div class='grid lg:grid-cols-3 items-center mt-8 lg:mt-0'>
+              <div class='grid items-center mt-8 lg:grid-cols-3 lg:mt-0'>
                 <label
                   class='text-xl lg:text-[1.4rem] font-bold lg:text-right lg:mr-4'
                 >
@@ -125,17 +123,17 @@ const contacts = [
               </div>
             </div>
 
-            <div class='px-3 grid lg:grid-cols-3 items-center'>
+            <div class='grid items-center px-3 lg:grid-cols-3'>
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Location kung saan naganap?
               </label>
-              <div class='lg:col-span-2 relative'>
+              <div class='relative lg:col-span-2'>
                 <input
                   type='text'
                   class='text-xl pr-7 lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
                   placeholder=''
                 />
-                <div class='w-6 h-6 absolute right-0 top-3'>
+                <div class='absolute right-0 w-6 h-6 top-3'>
                   <img
                     src='/images/location01.png'
                     alt='location icon'
@@ -145,7 +143,7 @@ const contacts = [
               </div>
             </div>
 
-            <div class='px-3 grid lg:grid-cols-3 space-y-3 lg:space-y-0'>
+            <div class='grid px-3 space-y-3 lg:grid-cols-3 lg:space-y-0'>
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Ikwento kung ano ang nangyari
               </label>
@@ -154,19 +152,19 @@ const contacts = [
                 rows='5'></textarea>
             </div>
 
-            <div class='px-3 grid lg:grid-cols-3 space-y-3 lg:space-y-0'>
+            <div class='grid px-3 space-y-3 lg:grid-cols-3 lg:space-y-0'>
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Mag-upload ng picture ng insidente (optional)
               </label>
               <div
-                class='lg:col-span-2 w-full p-4 border border-dashed border-gray-400 rounded-lg'
+                class='w-full p-4 border border-gray-400 border-dashed rounded-lg lg:col-span-2'
               >
                 <div class='text-gray-500'>
                   <div class='flex justify-between'>
                     <span>Drag and drop your images here</span>
                     <label
                       for='image-upload'
-                      class='px-4 py-2 text-white bg-ekis rounded-lg cursor-pointer'
+                      class='px-4 py-2 rounded-lg cursor-pointer text-slate-50 bg-ekis'
                     >
                       Browse
                     </label>
@@ -182,7 +180,7 @@ const contacts = [
                 </div>
                 <div
                   id='image-preview-container'
-                  class='mt-4 flex flex-wrap justify-center'
+                  class='flex flex-wrap justify-center mt-4'
                 >
                 </div>
               </div>
@@ -192,7 +190,7 @@ const contacts = [
             <div class='flex justify-center lg:justify-end'>
               <button
                 type='button'
-                class='next-btn px-10 py-3 text-sm text-white uppercase rounded-full lg:px-16 bg-ekis hover:opacity-80'
+                class='px-10 py-3 text-sm uppercase rounded-full text-slate-50 next-btn lg:px-16 bg-ekis hover:opacity-80'
               >
                 NEXT
               </button>
@@ -202,8 +200,8 @@ const contacts = [
           <!-- END STEP 1 -->
 
           <!-- STEP 2 -->
-          <div class='space-y-8 hidden' data-form='2'>
-            <div class='px-3 grid lg:grid-cols-3 items-center'>
+          <div class='hidden space-y-8' data-form='2'>
+            <div class='grid items-center px-3 lg:grid-cols-3'>
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Pangalan ng Informant:</label
               >
@@ -214,7 +212,7 @@ const contacts = [
               />
             </div>
 
-            <div class='px-3 grid lg:grid-cols-3 items-center'>
+            <div class='grid items-center px-3 lg:grid-cols-3'>
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Contact Number:</label
               >
@@ -226,7 +224,7 @@ const contacts = [
               />
             </div>
 
-            <div class='px-3 grid lg:grid-cols-3 items-center'>
+            <div class='grid items-center px-3 lg:grid-cols-3'>
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Email Address:</label
               >
@@ -238,13 +236,13 @@ const contacts = [
               />
             </div>
 
-            <div class='px-3 grid lg:grid-cols-3 items-center'>
+            <div class='grid items-center px-3 lg:grid-cols-3'>
               <span class='text-xl lg:text-[1.4rem] font-bold'> </span>
               <div class='lg:col-span-2'>
                 <input
                   type='checkbox'
                   id='agree'
-                  class='border-gray-300 border-2 text-black focus:border-gray-300 focus:ring-black'
+                  class='border-2 border-gray-300 rounded text-ekis focus:border-gray-300 focus:ring-ekis'
                 />
                 <label class='ml-2' for='agree'>
                   By checking this box I agree to the Terms & Conditions and
@@ -255,16 +253,16 @@ const contacts = [
             </div>
 
             <!-- SUBMIT BUTTON -->
-            <div class='flex justify-center lg:justify-end space-x-3'>
+            <div class='flex justify-center space-x-3 lg:justify-end'>
               <button
                 type='button'
-                class='prev-btn px-10 py-3 text-sm uppercase rounded-full lg:px-16 border-2 hover:opacity-80 border-black'
+                class='px-10 py-3 text-sm uppercase border-2 border-black rounded-full prev-btn lg:px-16 hover:bg-black hover:text-slate-50 hover:opacity-80'
               >
                 BACK
               </button>
               <button
                 type='button'
-                class='next-btn px-10 py-3 text-sm text-white uppercase rounded-full lg:px-16 bg-ekis hover:opacity-80'
+                class='px-10 py-3 text-sm uppercase rounded-full text-slate-50 next-btn lg:px-16 bg-ekis hover:opacity-80'
               >
                 SUBMIT
               </button>
@@ -274,7 +272,7 @@ const contacts = [
           <!-- END STEP 2 -->
 
           <!-- STEP 3 -->
-          <div class='space-y-8 hidden' data-form='3'>
+          <div class='hidden space-y-8' data-form='3'>
             <div class='flex justify-center'>
               <img
                 src='/images/check01.png'
@@ -283,8 +281,8 @@ const contacts = [
               />
             </div>
 
-            <div class='max-w-4xl mx-auto text-center space-y-4'>
-              <h3 class='text-ekis text-xl lg:text-[1.4rem] font-bold'>
+            <div class='max-w-4xl mx-auto prose text-center'>
+              <h3 class='text-ekis text-xl lg:text-[1.4rem]'>
                 MARAMING SALAMAT SA INYONG REPORT!
               </h3>
               <p>
@@ -315,19 +313,21 @@ const contacts = [
         class='absolute w-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
       >
         <div
-          class='flex flex-col items-center justify-between h-full px-2 mx-auto space-x-5 space-y-10 lg:px-16 max-w-7xl lg:flex-row'
+          class='flex flex-col items-center justify-between h-full px-2 mx-auto space-x-5 space-y-10 lg:px-20 max-w-7xl lg:flex-row'
         >
-          <h2 class='text-white text-6xl sm:text-7xl font-anton lg:text-8xl'>
+          <h2 class='text-6xl text-slate-50 sm:text-7xl font-anton lg:text-8xl'>
             KANINO PWEDE<br /> MAGSUMBONG?
           </h2>
 
-          <div class='max-w-xl space-y-7'>
+          <div class='max-w-md space-y-4'>
             {
               contacts.map((contact) => (
-                <div class='space-y-1 text-white'>
+                <div class='space-y-1 prose text-slate-50'>
                   <span>{contact.category}</span>
-                  <h3 class='text-xl lg:text-[1.4rem]'>{contact.title}</h3>
-                  <div class='font-thin'>
+                  <h3 class='text-xl lg:text-[1.4rem] text-slate-50'>
+                    {contact.title}
+                  </h3>
+                  <div class='font-light'>
                     <span class='block'>{contact.number}</span>
                     {contact.number2 && (
                       <span class='block'>{contact.number2}</span>
