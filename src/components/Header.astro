@@ -47,11 +47,11 @@ const links = [
       </div>
       <!-- Links -->
       <div class='hidden sm:block'>
-        <ul class='flex sm:space-x-3 md:space-x-6 lg:space-x-12'>
+        <ul class='flex sm:space-x-3 md:space-x-6 lg:space-x-12 text-gray-900'>
           {
             links.map((link) => (
               <li>
-                <a href={link.link} class='font-bold hover:opacity-60'>
+                <a href={link.link} class='font-bold hover:opacity-70'>
                   {link.name}
                 </a>
               </li>
@@ -64,11 +64,11 @@ const links = [
     <!-- Mobile menu, toggle classes with JavaScript -->
     <div class='hidden h-screen overflow-hidden sm:hidden'>
       <div class='flex justify-center menu'>
-        <ul class='px-2 pt-16 pb-3 space-y-8'>
+        <ul class='px-2 pt-16 pb-3 space-y-8 text-gray-900'>
           {
             links.map((link) => (
               <li>
-                <a href={link.link} class='text-lg font-bold hover:opacity-60'>
+                <a href={link.link} class='text-lg font-bold hover:opacity-70'>
                   {link.name}
                 </a>
               </li>

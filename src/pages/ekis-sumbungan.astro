@@ -34,7 +34,7 @@ const contacts = [
         <h2 class='text-ekis text-[1.5rem] lg:text-[2.5rem] text-center mb-2'>
           FILE A REPORT
         </h2>
-        <h3 class='text-[1.2rem] lg:text-[1.5rem] text-center'>
+        <h3 class='text-[1.2rem] lg:text-[1.5rem] text-center text-gray-900'>
           REPORT A SMUGGLING-RELATED CRIME
         </h3>
         <div class='max-w-3xl mx-auto text-center'>
@@ -58,7 +58,7 @@ const contacts = [
     <section class='relative bg-[#e8e8e8] lg:pb-5 lg:px-20'>
       <!-- STEPS -->
       <div
-        class='grid gap-5 mx-auto multisteps lg:grid-cols-3 max-w-7xl place-items-center lg:px-14 xl:px-24'
+        class='grid gap-5 mx-auto multisteps text-gray-900 lg:grid-cols-3 max-w-7xl place-items-center lg:px-14 xl:px-24'
       >
         <div class='hidden lg:inline active' data-step='1'>
           <h2 class='px-10 py-3 text-xl md:text-2xl whitespace-nowrap'>
@@ -82,7 +82,7 @@ const contacts = [
       <div
         class='px-5 py-10 mx-auto bg-white max-w-7xl mt-7 lg:my-7 lg:py-14 lg:px-10 lg:rounded-3xl'
       >
-        <form class='w-full' id='form-wizard'>
+        <form class='w-full text-gray-900' id='form-wizard'>
           <!-- STEP 1 -->
           <div class='space-y-8 active' data-form='1'>
             <div class='grid items-center px-3 lg:grid-cols-3'>
@@ -90,7 +90,7 @@ const contacts = [
                 Ano ang isusumbong mo?</label
               >
               <select
-                class='lg:col-span-2 text-xl lg:text-[1.4rem] w-full mt-0 px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                class='lg:col-span-2 text-xl lg:text-[1.4rem] w-full mt-0 px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
               >
                 <option disabled hidden selected>Please Select</option>
                 <option>ILLICIT TRADE - Pagbebenta ng pekeng sigarilyo</option>
@@ -105,7 +105,7 @@ const contacts = [
               >
               <input
                 type='text'
-                class='text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                class='text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
                 placeholder=''
               />
 
@@ -117,7 +117,7 @@ const contacts = [
                 >
                 <input
                   type='time'
-                  class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                  class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
                   placeholder=''
                 />
               </div>
@@ -130,7 +130,7 @@ const contacts = [
               <div class='relative lg:col-span-2'>
                 <input
                   type='text'
-                  class='text-xl pr-7 lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                  class='text-xl pr-7 lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
                   placeholder=''
                 />
                 <div class='absolute right-0 w-6 h-6 top-3'>
@@ -148,7 +148,7 @@ const contacts = [
                 Ikwento kung ano ang nangyari
               </label>
               <textarea
-                class='lg:col-span-2 text-xl lg:text-[1.4rem] p-3 mt-0 block w-full border-2 border-gray-300 focus:ring-0 focus:border-black'
+                class='lg:col-span-2 text-xl lg:text-[1.4rem] p-3 mt-0 block w-full border-2 border-gray-300 focus:ring-0 focus:border-gray-900'
                 rows='5'></textarea>
             </div>
 
@@ -190,7 +190,7 @@ const contacts = [
             <div class='flex justify-center lg:justify-end'>
               <button
                 type='button'
-                class='px-10 py-3 text-sm uppercase rounded-full text-slate-50 next-btn lg:px-16 bg-ekis hover:opacity-80'
+                class='px-10 py-3 text-sm uppercase rounded-full text-slate-50 next-btn bg-ekis hover:opacity-80'
               >
                 NEXT
               </button>
@@ -207,7 +207,7 @@ const contacts = [
               >
               <input
                 type='text'
-                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
                 placeholder='Last Name, First Name'
               />
             </div>
@@ -218,7 +218,7 @@ const contacts = [
               >
               <input
                 type='text'
-                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
                 placeholder='(+63) XXX XXX XXXX'
                 inputmode='tel'
               />
@@ -230,7 +230,7 @@ const contacts = [
               >
               <input
                 type='text'
-                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-black'
+                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
                 placeholder='e.g. juandelacruz@gmail.com'
                 inputmode='email'
               />
@@ -238,13 +238,13 @@ const contacts = [
 
             <div class='grid items-center px-3 lg:grid-cols-3'>
               <span class='text-xl lg:text-[1.4rem] font-bold'> </span>
-              <div class='lg:col-span-2'>
+              <div class='lg:col-span-2 flex'>
                 <input
                   type='checkbox'
                   id='agree'
                   class='border-2 border-gray-300 rounded text-ekis focus:border-gray-300 focus:ring-ekis'
                 />
-                <label class='ml-2' for='agree'>
+                <label class='ml-2 -mt-1' for='agree'>
                   By checking this box I agree to the Terms & Conditions and
                   Privacy Policy and all information given is correct and
                   verified.
@@ -256,13 +256,13 @@ const contacts = [
             <div class='flex justify-center space-x-3 lg:justify-end'>
               <button
                 type='button'
-                class='px-10 py-3 text-sm uppercase border-2 border-black rounded-full prev-btn lg:px-16 hover:bg-black hover:text-slate-50 hover:opacity-80'
+                class='px-10 py-3 text-sm uppercase border-2 border-gray-900 rounded-full prev-btn hover:bg-gray-900 hover:text-slate-50 hover:opacity-80'
               >
                 BACK
               </button>
               <button
                 type='button'
-                class='px-10 py-3 text-sm uppercase rounded-full text-slate-50 next-btn lg:px-16 bg-ekis hover:opacity-80'
+                class='px-10 py-3 text-sm uppercase rounded-full text-slate-50 next-btn bg-ekis hover:opacity-80'
               >
                 SUBMIT
               </button>
