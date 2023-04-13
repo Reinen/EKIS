@@ -273,19 +273,19 @@ import 'https://code.highcharts.com/maps/highmaps.js';
       }, 10);
 
       // Populate the details
-      const image1 = document.querySelector(`.image1`);
-      const image2 = document.querySelector(`.image2`);
-      const title = document.querySelector(`.title`);
-      const description = document.querySelector(`.description`);
-      const link = document.querySelector(`.link`);
-      const category = document.querySelector(`.category`);
+      // const image1 = document.querySelector(`.image1`);
+      // const image2 = document.querySelector(`.image2`);
+      // const title = document.querySelector(`.title`);
+      // const description = document.querySelector(`.description`);
+      // const link = document.querySelector(`.link`);
+      // const tag = document.querySelector(`.tag`);
 
-      image1.src = option.image1;
-      image2.src = option.image2;
-      title.textContent = option.title;
-      description.textContent = option.description;
-      category.textContent = option.category;
-      link.href = option.link;
+      // image1.src = option.image1;
+      // image2.src = option.image2;
+      // title.textContent = option.title;
+      // description.textContent = option.description;
+      // tag.textContent = option.tag;
+      // link.href = option.link;
     }
   };
 
@@ -356,8 +356,8 @@ import 'https://code.highcharts.com/maps/highmaps.js';
             },
             marker: {
               symbol: 'url(/images/ekis01.png)',
-              width: 45,
-              height: 45,
+              width: 15,
+              height: 15,
             },
           },
         ],

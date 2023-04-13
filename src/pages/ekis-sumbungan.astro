@@ -148,7 +148,7 @@ const contacts = [
               </label>
 
               <div class='input-group lg:col-span-2'>
-                <select
+                <!-- <select
                   id='cities'
                   class='text-xl lg:text-[1.4rem] w-full mt-0 px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
                   required
@@ -156,8 +156,24 @@ const contacts = [
                   <option disabled hidden selected value=''
                     >Please Select</option
                   >
-                </select>
-                <div class='error-message text-ekis text-sm'></div>
+                </select> -->
+                <div class='relative'>
+                  <input
+                    type='text'
+                    class='text-xl pr-7 lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
+                    placeholder=''
+                    required
+                  />
+                  <div class='absolute right-0 w-6 h-6 top-3'>
+                    <img
+                      src='/images/location01.png'
+                      alt='location icon'
+                      class='object-contain'
+                    />
+                  </div>
+
+                  <div class='error-message text-ekis text-sm'></div>
+                </div>
               </div>
             </div>
 

@@ -49,7 +49,7 @@ const news = [
         data-popover-name='popover'
       >
         <div
-          class='relative w-full h-screen px-10 py-16 overflow-auto bg-black lg:flex lg:items-center lg:justify-center lg:px-20'
+          class='relative w-full h-screen px-5 py-16 overflow-auto bg-black lg:flex lg:items-center lg:justify-center lg:px-20'
         >
           <button
             class='absolute top-0 right-0 px-4 py-2 mt-4 font-medium text-white underline'
@@ -57,35 +57,73 @@ const news = [
             >Close
           </button>
 
-          <div class='grid gap-5 lg:grid-cols-2 place-items-center'>
-            <div class='flex'>
-              <!-- Image 1 -->
-              <img src='' alt='Image 09' class='object-cover image1' />
+          <div class='grid gap-5 lg:grid-cols-2 place-items-start'>
+            <div class='flex w-full justify-center'>
+              <div class='relative'>
+                <!-- Image 1 -->
+                <img
+                  src='/images/img09.jpg'
+                  alt='Image 09'
+                  class='object-cover image1'
+                />
+
+                <div
+                  class='text-white absolute left-8 md:left-12 top-24 md:top-34 text-right w-60 border-0 border-b-2'
+                >
+                  <h3 class='font-francois text-4xl md:text-5xl'>Sulu</h3>
+                  <h4 class='font-opensans text-4xl'>PHILIPPINES</h4>
+                </div>
+              </div>
             </div>
 
-            <article class='grid items-center w-full gap-5'>
+            <section
+              class='grid items-center w-full gap-5 max-h-[80vh] overflow-y-auto pr-4'
+            >
               <!-- Image 2 -->
-              <img src='' alt='Image 03' class='object-cover image2' />
+              <img
+                src='/images/img03.jpg'
+                alt='Image 03'
+                class='object-cover image2'
+              />
 
-              <div class='prose text-white max-w-7xl'>
-                <!-- Catgory -->
-                <span
-                  class='block text-lg italic text-ekis md:text-xl category'
-                >
-                </span>
-                <!-- Title -->
-                <h3 class='mt-2 text-xl text-white md:text-2xl title'></h3>
-                <!-- Description -->
-                <p class='text-sm md:text-base description'></p>
-                <!-- Link -->
-                <a
-                  href='/hotspots-article'
-                  class='text-white underline hover:opacity-60 link'
-                >
-                  READ MORE
-                </a>
+              <div class='prose space-y-8 max-w-7xl'>
+                {
+                  news.map((latest) => (
+                    <>
+                      <article class='text-white max-w-7xl'>
+                        <span class='block text-lg italic text-ekis md:text-xl tag'>
+                          {latest.category}
+                        </span>
+
+                        <h3 class='mt-2 text-xl text-white md:text-2xl title'>
+                          {latest.title}
+                        </h3>
+
+                        <p class='text-sm md:text-base description'>
+                          {latest.description}
+                        </p>
+
+                        <a
+                          href='/hotspots-article'
+                          class='text-white underline hover:opacity-60 link'
+                        >
+                          READ MORE
+                        </a>
+                      </article>
+                      <hr class='my-4 border-gray-300' />
+                    </>
+                  ))
+                }
+                <!-- LOAD MORE -->
+                <div class='flex justify-center space-x-5'>
+                  <button
+                    class='px-10 py-3 text-sm text-white uppercase rounded-full lg:px-16 bg-ekis hover:opacity-80'
+                  >
+                    Load More
+                  </button>
+                </div>
               </div>
-            </article>
+            </section>
           </div>
         </div>
       </div>
