@@ -8,6 +8,8 @@ module.exports = {
       },
       fontFamily: {
         anton: ['Anton', 'sans-serif'],
+        opensans: ['Open Sans', 'sans-serif'],
+        francois: ['Francois One', 'sans-serif'],
       },
     },
   },
