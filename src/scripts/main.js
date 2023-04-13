@@ -294,7 +294,7 @@ import 'https://code.highcharts.com/maps/highmaps.js';
       'https://code.highcharts.com/mapdata/countries/ph/ph-all.topo.json',
     ).then((response) => response.json());
 
-    const data = await fetch('/src/scripts/data.json').then((response) =>
+    const data = await fetch('/json/data.json').then((response) =>
       response.json(),
     );
 
