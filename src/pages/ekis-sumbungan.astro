@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Cities from '../components/Cities.astro';
 
 const contacts = [
   {
@@ -89,25 +90,39 @@ const contacts = [
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Ano ang isusumbong mo?</label
               >
-              <select
-                class='lg:col-span-2 text-xl lg:text-[1.4rem] w-full mt-0 px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
-              >
-                <option disabled hidden selected>Please Select</option>
-                <option>ILLICIT TRADE - Pagbebenta ng pekeng sigarilyo</option>
-                <option>Wedding</option>
-                <option>Birthday</option>
-              </select>
+              <div class='input-group lg:col-span-2'>
+                <select
+                  class='text-xl lg:text-[1.4rem] w-full mt-0 px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
+                  required
+                >
+                  <option disabled hidden selected value=''
+                    >Please Select</option
+                  >
+                  <option value='ILLICIT TRADE - Pagbebenta ng pekeng sigarilyo'
+                    >ILLICIT TRADE - Pagbebenta ng pekeng sigarilyo</option
+                  >
+                  <option value='Wedding'>Wedding</option>
+                  <option value='Birthday'>Birthday</option>
+                </select>
+
+                <div class='error-message text-ekis text-sm'></div>
+              </div>
             </div>
 
             <div class='grid items-center px-3 lg:grid-cols-3'>
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Kailan nangyari ang insidente?</label
               >
-              <input
-                type='text'
-                class='text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
-                placeholder=''
-              />
+              <div class='input-group'>
+                <input
+                  type='text'
+                  class='text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
+                  placeholder=''
+                  required
+                />
+
+                <div class='error-message text-ekis text-sm'></div>
+              </div>
 
               <div class='grid items-center mt-8 lg:grid-cols-3 lg:mt-0'>
                 <label
@@ -115,11 +130,15 @@ const contacts = [
                 >
                   Oras:</label
                 >
-                <input
-                  type='time'
-                  class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
-                  placeholder=''
-                />
+                <div class='input-group lg:col-span-2'>
+                  <input
+                    type='time'
+                    class='text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
+                    placeholder=''
+                    required
+                  />
+                  <div class='error-message text-ekis text-sm'></div>
+                </div>
               </div>
             </div>
 
@@ -127,19 +146,18 @@ const contacts = [
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Location kung saan naganap?
               </label>
-              <div class='relative lg:col-span-2'>
-                <input
-                  type='text'
-                  class='text-xl pr-7 lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
-                  placeholder=''
-                />
-                <div class='absolute right-0 w-6 h-6 top-3'>
-                  <img
-                    src='/images/location01.png'
-                    alt='location icon'
-                    class='object-contain'
-                  />
-                </div>
+
+              <div class='input-group lg:col-span-2'>
+                <select
+                  id='cities'
+                  class='text-xl lg:text-[1.4rem] w-full mt-0 px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
+                  required
+                >
+                  <option disabled hidden selected value=''
+                    >Please Select</option
+                  >
+                </select>
+                <div class='error-message text-ekis text-sm'></div>
               </div>
             </div>
 
@@ -147,9 +165,14 @@ const contacts = [
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Ikwento kung ano ang nangyari
               </label>
-              <textarea
-                class='lg:col-span-2 text-xl lg:text-[1.4rem] p-3 mt-0 block w-full border-2 border-gray-300 focus:ring-0 focus:border-gray-900'
-                rows='5'></textarea>
+
+              <div class='input-group lg:col-span-2'>
+                <textarea
+                  class='text-xl lg:text-[1.4rem] p-3 mt-0 block w-full border-2 border-gray-300 focus:ring-0 focus:border-gray-900'
+                  required
+                  rows='5'></textarea>
+                <div class='error-message text-ekis text-sm'></div>
+              </div>
             </div>
 
             <div class='grid px-3 space-y-3 lg:grid-cols-3 lg:space-y-0'>
@@ -205,35 +228,52 @@ const contacts = [
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Pangalan ng Informant:</label
               >
-              <input
-                type='text'
-                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
-                placeholder='Last Name, First Name'
-              />
+              <div class='input-group lg:col-span-2'>
+                <input
+                  type='text'
+                  class='text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
+                  placeholder='Last Name, First Name'
+                  required
+                />
+
+                <div class='error-message text-ekis text-sm'></div>
+              </div>
             </div>
 
             <div class='grid items-center px-3 lg:grid-cols-3'>
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Contact Number:</label
               >
-              <input
-                type='text'
-                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
-                placeholder='(+63) XXX XXX XXXX'
-                inputmode='tel'
-              />
+
+              <div class='input-group lg:col-span-2'>
+                <input
+                  type='text'
+                  class='text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
+                  placeholder='(+63) XXX XXX XXXX'
+                  required
+                  inputmode='tel'
+                />
+
+                <div class='error-message text-ekis text-sm'></div>
+              </div>
             </div>
 
             <div class='grid items-center px-3 lg:grid-cols-3'>
               <label class='text-xl lg:text-[1.4rem] font-bold'>
                 Email Address:</label
               >
-              <input
-                type='text'
-                class='lg:col-span-2 text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
-                placeholder='e.g. juandelacruz@gmail.com'
-                inputmode='email'
-              />
+
+              <div class='input-group lg:col-span-2'>
+                <input
+                  type='text'
+                  class='text-xl lg:text-[1.4rem] mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-gray-900'
+                  placeholder='e.g. juandelacruz@gmail.com'
+                  inputmode='email'
+                  required
+                />
+
+                <div class='error-message text-ekis text-sm'></div>
+              </div>
             </div>
 
             <div class='grid items-center px-3 lg:grid-cols-3'>

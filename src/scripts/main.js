@@ -3,6 +3,9 @@
 // * SWIPER JS
 import 'https://unpkg.com/swiper/swiper-bundle.min.js';
 
+// * HIGHCHARTS
+import 'https://code.highcharts.com/maps/highmaps.js';
+
 (function () {
   const burgerMenu = () => {
     // * Burger Menu
@@ -36,39 +39,6 @@ import 'https://unpkg.com/swiper/swiper-bundle.min.js';
     });
   };
 
-  const popover = () => {
-    // * POPOVER
-    const popoverTriggers = document.querySelectorAll('[data-popover-target]');
-    const bodyOverflow = document.querySelector('body');
-    popoverTriggers.forEach((trigger) => {
-      const popoverName = trigger.getAttribute('data-popover-target');
-      const popover = document.querySelector(
-        `[data-popover-name="${popoverName}"]`,
-      );
-      if (popover) {
-        const closeBtn = popover.querySelector('[data-close-popover]');
-        if (closeBtn) {
-          closeBtn.addEventListener('click', () => {
-            popover.classList.remove('opacity-100');
-            popover.classList.add('opacity-0');
-            setTimeout(() => {
-              popover.classList.add('hidden');
-              bodyOverflow.style.overflow = 'auto';
-            }, 10);
-          });
-        }
-        trigger.addEventListener('click', () => {
-          popover.classList.remove('hidden');
-          bodyOverflow.style.overflow = 'hidden';
-          setTimeout(() => {
-            popover.classList.remove('opacity-0');
-            popover.classList.add('opacity-100');
-          }, 10);
-        });
-      }
-    });
-  };
-
   const dragAndDrop = () => {
     // * DRAG AND DROP IMAGE UPLOAD WITH PREVIEW
     const dropZone = document.querySelector('.border-dashed');
@@ -76,27 +46,32 @@ import 'https://unpkg.com/swiper/swiper-bundle.min.js';
       '#image-preview-container',
     );
 
-    dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      dropZone.classList.add('border-blue-500');
-    });
+    if (dropZone) {
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('border-blue-500');
+      });
 
-    dropZone.addEventListener('dragleave', () => {
-      dropZone.classList.remove('border-blue-500');
-    });
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('border-blue-500');
+      });
 
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.classList.remove('border-blue-500');
-      const files = e.dataTransfer.files;
-      handleFiles(files);
-    });
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('border-blue-500');
+        const files = e.dataTransfer.files;
+        handleFiles(files);
+      });
+    }
 
     const fileInput = document.querySelector('#image-upload');
-    fileInput.addEventListener('change', () => {
-      const files = fileInput.files;
-      handleFiles(files);
-    });
+
+    if (fileInput) {
+      fileInput.addEventListener('change', () => {
+        const files = fileInput.files;
+        handleFiles(files);
+      });
+    }
 
     function handleFiles(files) {
       for (let i = 0; i < files.length; i++) {
@@ -141,6 +116,7 @@ import 'https://unpkg.com/swiper/swiper-bundle.min.js';
 
   const formWizard = () => {
     // * FORM WIZARD
+
     const form = document.querySelector('#form-wizard');
     const prevBtn = document.querySelectorAll('.prev-btn');
     const nextBtn = document.querySelectorAll('.next-btn');
@@ -183,8 +159,37 @@ import 'https://unpkg.com/swiper/swiper-bundle.min.js';
     }
 
     function handleNext() {
-      currentStep++;
-      showStep(currentStep);
+      const currentFormStep = form.querySelectorAll('[data-form]')[currentStep];
+      const requiredFields = currentFormStep.querySelectorAll('[required]');
+      let isValid = true;
+
+      requiredFields.forEach((field) => {
+        const errorContainer = field.parentNode.querySelector('.error-message');
+        if (field.value === '') {
+          // Append the error message
+          errorContainer.textContent = `This field is required.`;
+          errorContainer.classList.remove('hidden');
+
+          isValid = false;
+          field.classList.add('invalid:border-ekis');
+        } else {
+          errorContainer.textContent = ``;
+          errorContainer.classList.add('hidden');
+          field.classList.remove('invalid:border-ekis');
+        }
+
+        // Add a change event listener to the field
+        field.addEventListener('change', () => {
+          errorContainer.textContent = '';
+          errorContainer.classList.add('hidden');
+          field.classList.remove('invalid:border-ekis');
+        });
+      });
+
+      if (isValid) {
+        currentStep++;
+        showStep(currentStep);
+      }
     }
 
     prevBtn.forEach((button) => {
@@ -194,8 +199,170 @@ import 'https://unpkg.com/swiper/swiper-bundle.min.js';
     nextBtn.forEach((button) => {
       button.addEventListener('click', handleNext);
     });
+  };
 
-    // showStep(currentStep);
+  const cities = () => {
+    let data;
+
+    async function fetchData() {
+      const response = await fetch(
+        'https://code.highcharts.com/mapdata/countries/ph/ph-all.geo.json',
+      );
+      const jsonData = await response.json();
+      if (jsonData.features) {
+        data = jsonData.features
+          .filter(
+            (item) =>
+              item.properties.name !== null &&
+              item.properties.name !== undefined,
+          )
+          .map((item) => ({
+            name: item.properties.name,
+            value:
+              item.properties.name +
+              ',' +
+              item.properties.longitude +
+              ',' +
+              item.properties.latitude,
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name));
+      }
+      return data;
+    }
+
+    async function populateSelect() {
+      const select = document.getElementById('cities');
+      const cities = await fetchData();
+      cities.forEach((city) => {
+        const option = document.createElement('option');
+        option.text = city.name;
+        option.value = city.value;
+
+        if (select) {
+          select.appendChild(option);
+        }
+      });
+    }
+
+    populateSelect();
+  };
+
+  const popover = (option) => {
+    // * POPOVER
+    const bodyOverflow = document.querySelector('body');
+    const popover = document.querySelector(`[data-popover-name="popover"]`);
+    if (popover) {
+      const closeBtn = popover.querySelector('[data-close-popover]');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          popover.classList.remove('opacity-100');
+          popover.classList.add('opacity-0');
+          setTimeout(() => {
+            popover.classList.add('hidden');
+            bodyOverflow.style.overflow = 'auto';
+          }, 10);
+        });
+      }
+
+      // Open Popover
+      popover.classList.remove('hidden');
+      bodyOverflow.style.overflow = 'hidden';
+      setTimeout(() => {
+        popover.classList.remove('opacity-0');
+        popover.classList.add('opacity-100');
+      }, 10);
+
+      // Populate the details
+      const image1 = document.querySelector(`.image1`);
+      const image2 = document.querySelector(`.image2`);
+      const title = document.querySelector(`.title`);
+      const description = document.querySelector(`.description`);
+      const link = document.querySelector(`.link`);
+      const category = document.querySelector(`.category`);
+
+      image1.src = option.image1;
+      image2.src = option.image2;
+      title.textContent = option.title;
+      description.textContent = option.description;
+      category.textContent = option.category;
+      link.href = option.link;
+    }
+  };
+
+  const highcharts = async () => {
+    const topology = await fetch(
+      'https://code.highcharts.com/mapdata/countries/ph/ph-all.topo.json',
+    ).then((response) => response.json());
+
+    const data = await fetch('/src/scripts/data.json').then((response) =>
+      response.json(),
+    );
+
+    const ekisChart = document.querySelector(`#ekisChart`);
+
+    if (ekisChart) {
+      // Initialize the chart
+      Highcharts.mapChart(ekisChart, {
+        chart: {
+          map: topology,
+        },
+
+        title: {
+          text: '',
+        },
+
+        mapNavigation: {
+          enabled: false,
+          enableDoubleClickZoomTo: true,
+        },
+
+        tooltip: {
+          headerFormat: '',
+          pointFormat: '<b>{point.name}</b><br>{point.title}',
+          enabled: false,
+        },
+
+        series: [
+          {
+            // Use the gb-all map with no data as a basemap
+            name: '',
+            borderColor: '#A0A0A0',
+            nullColor: 'rgba(200, 200, 200, 0.3)',
+            showInLegend: false,
+          },
+          {
+            name: 'Separators',
+            type: 'mapline',
+            nullColor: '#707070',
+            showInLegend: false,
+            enableMouseTracking: false,
+            accessibility: {
+              enabled: false,
+            },
+          },
+          {
+            // Specify points using lat/lon
+            type: 'mappoint',
+            name: 'EKIS Hotspots',
+            color: 'rgb(255 34 23)',
+            data: data,
+            point: {
+              events: {
+                click: function (event) {
+                  // POPOVER DETAILS
+                  popover(this.options);
+                },
+              },
+            },
+            marker: {
+              symbol: 'url(/images/ekis01.png)',
+              width: 45,
+              height: 45,
+            },
+          },
+        ],
+      });
+    }
   };
 
   // Wait for the DOM to finish loading before running the script
@@ -203,8 +370,9 @@ import 'https://unpkg.com/swiper/swiper-bundle.min.js';
     // Your JavaScript code goes here
     burgerMenu();
     swiper();
-    popover();
     dragAndDrop();
     formWizard();
+    cities();
+    highcharts();
   });
 })();

@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Misamis Oriental",
+    "lat": 8.74226,
+    "lon": 124.992,
+    "title": "This is a Title",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, beatae",
+    "link": "/hotspots-article",
+    "category": "Bulletin",
+    "image1": "/images/img09.jpg",
+    "image2": "/images/img03.jpg"
+  },
+  {
+    "name": "Tawi-Tawi",
+    "lat": 4.807516,
+    "lon": 119.835,
+    "title": "BOC RAIDS SULU WAREHOUSE, SEIZES P1.4B WORTH OF SMUGGLED CIGARETTES",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, beatae",
+    "link": "/hotspots-article",
+    "category": "Bulletin",
+    "image1": "/images/img09.jpg",
+    "image2": "/images/img03.jpg"
+  },
+
+  {
+    "name": "Baguio",
+    "lat": 16.4059,
+    "lon": 120.605,
+    "title": "This is a Title3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, beatae",
+    "link": "/hotspots-article",
+    "category": "Bulletin",
+    "image1": "/images/img09.jpg",
+    "image2": "/images/img03.jpg"
+  },
+
+  {
+    "name": "Laguna",
+    "lat": 14.146,
+    "lon": 121.307,
+    "title": "P26-M smuggled cigarettes declared as plastic cups seized in Port of Davao",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, beatae",
+    "link": "/hotspots-article",
+    "category": "Bulletin",
+    "image1": "/images/img09.jpg",
+    "image2": "/images/img03.jpg"
+  },
+
+  {
+    "name": "Valenzuela",
+    "lat": "14.6939",
+    "lon": "120.991",
+    "title": "This is a Title5",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, beatae",
+    "link": "/hotspots-article",
+    "category": "Bulletin",
+    "image1": "/images/img09.jpg",
+    "image2": "/images/img03.jpg"
+  }
+]

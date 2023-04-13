@@ -40,276 +40,56 @@ const news = [
 <Layout title='EKIS Hotspots'>
   <main class='pt-[100px] flex-grow'>
     <!-- MAP -->
-    <section class='flex justify-center bg-gray-100'>
-      <div class='relative'>
-        <img
-          src='/images/map.png'
-          alt='Hero Image'
-          class='object-cover h-[800px]'
-        />
+    <section class='flex justify-center'>
+      <div id='ekisChart' class='h-[800px] min-w-[310px] w-[800px]'></div>
 
-        <!-- EKIS MARK -->
-        <div class='absolute top-[220px] left-[130px]'>
-          <img
-            src='/images/ekis01.png'
-            alt='EKIS'
-            class='cursor-pointer'
-            data-popover-target='1st-popover'
-          />
+      <!-- OVERLAY -->
+      <div
+        class='fixed inset-0 z-50 hidden transition duration-300 ease-out opacity-0'
+        data-popover-name='popover'
+      >
+        <div
+          class='relative w-full h-screen px-10 py-16 overflow-auto bg-black lg:flex lg:items-center lg:justify-center lg:px-20'
+        >
+          <button
+            class='absolute top-0 right-0 px-4 py-2 mt-4 font-medium text-white underline'
+            data-close-popover
+            >Close
+          </button>
 
-          <!-- OVERLAY -->
-          <div
-            class='fixed inset-0 z-50 hidden transition duration-300 ease-out opacity-0'
-            data-popover-name='1st-popover'
-          >
-            <div
-              class='relative w-full h-screen px-10 py-16 overflow-auto bg-black lg:flex lg:items-center lg:justify-center lg:px-20'
-            >
-              <button
-                class='absolute top-0 right-0 px-4 py-2 mt-4 font-medium text-white underline'
-                data-close-popover
-                >Close
-              </button>
-
-              <div class='grid gap-5 lg:grid-cols-2 place-items-center'>
-                <div class='flex'>
-                  <img
-                    src='/images/img09.jpg'
-                    alt='Image 09'
-                    class='object-cover'
-                  />
-                </div>
-
-                <article class='grid items-center w-full gap-5'>
-                  <img
-                    src='/images/img03.jpg'
-                    alt='Image 03'
-                    class='object-cover'
-                  />
-
-                  <div class='prose text-white max-w-7xl'>
-                    <span class='block text-lg italic text-ekis md:text-xl'>
-                      Manila Bulletin
-                    </span>
-                    <h3 class='mt-2 text-xl text-white md:text-2xl'>
-                      P26-M smuggled cigarettes declared as plastic cups seized
-                      in Port of Davao'
-                    </h3>
-                    <p class='text-sm md:text-base'>
-                      Close to 1,000 master cases of smuggled cigarettes worth
-                      P26 million were intercepted at the Port of Davao, the
-                      Bureau of Customs (BoC) said on Tuesday.
-                    </p>
-                    <a
-                      href='/hotspots-article'
-                      class='text-white underline hover:opacity-60'
-                    >
-                      READ MORE
-                    </a>
-                  </div>
-                </article>
-              </div>
+          <div class='grid gap-5 lg:grid-cols-2 place-items-center'>
+            <div class='flex'>
+              <!-- Image 1 -->
+              <img src='' alt='Image 09' class='object-cover image1' />
             </div>
-          </div>
-          <!-- END OVERLAY -->
-        </div>
 
-        <div class='absolute top-[320px] left-[170px]'>
-          <img
-            src='/images/ekis01.png'
-            alt='EKIS'
-            class='cursor-pointer'
-            data-popover-target='2nd-popover'
-          />
+            <article class='grid items-center w-full gap-5'>
+              <!-- Image 2 -->
+              <img src='' alt='Image 03' class='object-cover image2' />
 
-          <!-- OVERLAY -->
-          <div
-            class='fixed inset-0 z-50 hidden transition duration-300 ease-out opacity-0'
-            data-popover-name='2nd-popover'
-          >
-            <div
-              class='relative w-full h-screen px-10 py-16 overflow-auto bg-black lg:flex lg:items-center lg:justify-center lg:px-20'
-            >
-              <button
-                class='absolute top-0 right-0 px-4 py-2 mt-4 font-medium text-white underline'
-                data-close-popover
-                >Close
-              </button>
-
-              <div class='grid gap-5 lg:grid-cols-2 place-items-center'>
-                <div class='flex'>
-                  <img
-                    src='/images/img09.jpg'
-                    alt='Image 09'
-                    class='object-cover'
-                  />
-                </div>
-
-                <article class='grid items-center w-full gap-5'>
-                  <img
-                    src='/images/img01.jpg'
-                    alt='Image 01'
-                    class='object-cover'
-                  />
-
-                  <div class='prose text-white max-w-7xl'>
-                    <span class='block text-lg italic text-ekis md:text-xl'>
-                      2nd Manila Bulletin
-                    </span>
-                    <h3 class='mt-2 text-xl text-white md:text-2xl'>
-                      P26-M smuggled cigarettes declared as plastic cups seized
-                      in Port of Davao'
-                    </h3>
-                    <p class='text-sm md:text-base'>
-                      Close to 1,000 master cases of smuggled cigarettes worth
-                      P26 million were intercepted at the Port of Davao, the
-                      Bureau of Customs (BoC) said on Tuesday.
-                    </p>
-                    <a
-                      href='/hotspots-article'
-                      class='text-white underline hover:opacity-60'
-                    >
-                      READ MORE
-                    </a>
-                  </div>
-                </article>
+              <div class='prose text-white max-w-7xl'>
+                <!-- Catgory -->
+                <span
+                  class='block text-lg italic text-ekis md:text-xl category'
+                >
+                </span>
+                <!-- Title -->
+                <h3 class='mt-2 text-xl text-white md:text-2xl title'></h3>
+                <!-- Description -->
+                <p class='text-sm md:text-base description'></p>
+                <!-- Link -->
+                <a
+                  href='/hotspots-article'
+                  class='text-white underline hover:opacity-60 link'
+                >
+                  READ MORE
+                </a>
               </div>
-            </div>
+            </article>
           </div>
-          <!-- END OVERLAY -->
         </div>
-
-        <div class='absolute top-[440px] left-[100px]'>
-          <img
-            src='/images/ekis01.png'
-            alt='EKIS'
-            class='cursor-pointer'
-            data-popover-target='3rd-popover'
-          />
-
-          <!-- OVERLAY -->
-          <div
-            class='fixed inset-0 z-50 hidden transition duration-300 ease-out opacity-0'
-            data-popover-name='3rd-popover'
-          >
-            <div
-              class='relative w-full h-screen px-10 py-16 overflow-auto bg-black lg:flex lg:items-center lg:justify-center lg:px-20'
-            >
-              <button
-                class='absolute top-0 right-0 px-4 py-2 mt-4 font-medium text-white underline'
-                data-close-popover
-                >Close
-              </button>
-
-              <div class='grid gap-5 lg:grid-cols-2 place-items-center'>
-                <div class='flex'>
-                  <img
-                    src='/images/img09.jpg'
-                    alt='Image 09'
-                    class='object-cover'
-                  />
-                </div>
-
-                <article class='grid items-center w-full gap-5'>
-                  <img
-                    src='/images/img06.jpg'
-                    alt='Image 06'
-                    class='object-cover'
-                  />
-
-                  <div class='prose text-white max-w-7xl'>
-                    <span class='block text-lg italic text-ekis md:text-xl'>
-                      3rd Manila Bulletin
-                    </span>
-                    <h3 class='mt-2 text-xl text-white md:text-2xl'>
-                      P26-M smuggled cigarettes declared as plastic cups seized
-                      in Port of Davao'
-                    </h3>
-                    <p class='text-sm md:text-base'>
-                      Close to 1,000 master cases of smuggled cigarettes worth
-                      P26 million were intercepted at the Port of Davao, the
-                      Bureau of Customs (BoC) said on Tuesday.
-                    </p>
-                    <a
-                      href='/hotspots-article'
-                      class='text-white underline hover:opacity-60'
-                    >
-                      READ MORE
-                    </a>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-          <!-- END OVERLAY -->
-        </div>
-
-        <div class='absolute bottom-[120px] right-[100px]'>
-          <img
-            src='/images/ekis01.png'
-            alt='EKIS'
-            class='cursor-pointer'
-            data-popover-target='4th-popover'
-          />
-
-          <!-- OVERLAY -->
-          <div
-            class='fixed inset-0 z-50 hidden transition duration-300 ease-out opacity-0'
-            data-popover-name='4th-popover'
-          >
-            <div
-              class='relative w-full h-screen px-10 py-16 overflow-auto bg-black lg:flex lg:items-center lg:justify-center lg:px-20'
-            >
-              <button
-                class='absolute top-0 right-0 px-4 py-2 mt-4 font-medium text-white underline'
-                data-close-popover
-                >Close
-              </button>
-
-              <div class='grid gap-5 lg:grid-cols-2 place-items-center'>
-                <div class='flex'>
-                  <img
-                    src='/images/img09.jpg'
-                    alt='Image 09'
-                    class='object-cover'
-                  />
-                </div>
-
-                <article class='grid items-center w-full gap-5'>
-                  <img
-                    src='/images/img08.jpg'
-                    alt='Image 08'
-                    class='object-cover'
-                  />
-
-                  <div class='prose text-white max-w-7xl'>
-                    <span class='block text-lg italic text-ekis md:text-xl'>
-                      4th Manila Bulletin
-                    </span>
-                    <h3 class='mt-2 text-xl text-white md:text-2xl'>
-                      P26-M smuggled cigarettes declared as plastic cups seized
-                      in Port of Davao'
-                    </h3>
-                    <p class='text-sm md:text-base'>
-                      Close to 1,000 master cases of smuggled cigarettes worth
-                      P26 million were intercepted at the Port of Davao, the
-                      Bureau of Customs (BoC) said on Tuesday.
-                    </p>
-                    <a
-                      href='/hotspots-article'
-                      class='text-white underline hover:opacity-60'
-                    >
-                      READ MORE
-                    </a>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-          <!-- END OVERLAY -->
-        </div>
-        <!--END EKIS MARK -->
       </div>
+      <!-- END OVERLAY -->
     </section>
     <!-- END MAP -->
 

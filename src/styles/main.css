@@ -101,3 +101,14 @@ body {
   transform: translateY(-8px) rotate(-45deg);
   bottom: 2.5px;
 }
+
+/* HIGH CHARTS */
+.loading {
+  margin-top: 10em;
+  text-align: center;
+  color: gray;
+}
+
+image.highcharts-point {
+  cursor: pointer;
+}
