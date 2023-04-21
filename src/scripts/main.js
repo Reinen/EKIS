@@ -42,6 +42,7 @@ import 'https://code.highcharts.com/maps/highmaps.js';
   const dragAndDrop = () => {
     // * DRAG AND DROP IMAGE UPLOAD WITH PREVIEW
     const dropZone = document.querySelector('.border-dashed');
+    const fileInput = document.querySelector('#image-upload');
     const imagePreviewContainer = document.querySelector(
       '#image-preview-container',
     );
@@ -60,11 +61,10 @@ import 'https://code.highcharts.com/maps/highmaps.js';
         e.preventDefault();
         dropZone.classList.remove('border-blue-500');
         const files = e.dataTransfer.files;
+        fileInput.files = files; // add files to file input
         handleFiles(files);
       });
     }
-
-    const fileInput = document.querySelector('#image-upload');
 
     if (fileInput) {
       fileInput.addEventListener('change', () => {
@@ -101,6 +101,7 @@ import 'https://code.highcharts.com/maps/highmaps.js';
           );
           deleteButton.addEventListener('click', () => {
             imagePreview.remove();
+            fileInput.value = null; // clear input field after removing preview
           });
           const img = document.createElement('img');
           img.src = reader.result;
@@ -163,8 +164,21 @@ import 'https://code.highcharts.com/maps/highmaps.js';
       const requiredFields = currentFormStep.querySelectorAll('[required]');
       let isValid = true;
 
-      requiredFields.forEach((field) => {
+      requiredFields.forEach((field, index) => {
+        console.log(
+          '🚀 ~ file: main.js:167 ~ requiredFields.forEach ~ index:',
+          index,
+        );
+        console.log(
+          '🚀 ~ file: main.js:167 ~ requiredFields.forEach ~ field:',
+          field,
+        );
+
         const errorContainer = field.parentNode.querySelector('.error-message');
+        const dateRegex = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+        const numericRegex = /^[0-9]*$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         if (field.value === '') {
           // Append the error message
           errorContainer.textContent = `This field is required.`;
@@ -172,10 +186,40 @@ import 'https://code.highcharts.com/maps/highmaps.js';
 
           isValid = false;
           field.classList.add('invalid:border-ekis');
-        } else {
-          errorContainer.textContent = ``;
-          errorContainer.classList.add('hidden');
-          field.classList.remove('invalid:border-ekis');
+        }
+
+        if (currentStep === 0 && index === 1 && !dateRegex.test(field.value)) {
+          // DATE FORMAT
+          // Append the error message if input is not a valid date format
+          errorContainer.textContent = `Please enter a valid date in MM/DD/YYYY format.`;
+          errorContainer.classList.remove('hidden');
+
+          isValid = false;
+          field.classList.add('invalid:border-ekis');
+        }
+
+        // CONTACT NUMBER
+        if (
+          currentStep === 1 &&
+          index === 1 &&
+          !numericRegex.test(field.value)
+        ) {
+          // Append the error message if input is not a number
+          errorContainer.textContent = `Please enter a number only.`;
+          errorContainer.classList.remove('hidden');
+
+          isValid = false;
+          field.classList.add('invalid:border-ekis');
+        }
+
+        // EMAIL ADDRESS
+        if (currentStep === 1 && index === 2 && !emailRegex.test(field.value)) {
+          // Append the error message if input is not a valid email address
+          errorContainer.textContent = `Please enter a valid email address.`;
+          errorContainer.classList.remove('hidden');
+
+          isValid = false;
+          field.classList.add('invalid:border-ekis');
         }
 
         // Add a change event listener to the field
