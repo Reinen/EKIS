@@ -168,21 +168,21 @@ import 'https://cdn.jsdelivr.net/npm/flatpickr';
       let isValid = true;
 
       requiredFields.forEach((field, index) => {
-        console.log(
-          '🚀 ~ file: main.js:167 ~ requiredFields.forEach ~ index:',
-          index,
-        );
-        console.log(
-          '🚀 ~ file: main.js:167 ~ requiredFields.forEach ~ field:',
-          field,
-        );
-
         const errorContainer = field.parentNode.querySelector('.error-message');
         const dateRegex = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
-        const numericRegex = /^[0-9]*$/;
+        const numericRegex = /^[0-9+()]*$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (field.value === '') {
+        if (field.type === 'checkbox' && !field.checked) {
+          // Append the error message
+          errorContainer.textContent = `This field is required.`;
+          errorContainer.classList.remove('hidden');
+
+          isValid = false;
+          field.classList.add('invalid:border-ekis');
+        }
+
+        if (field.type !== 'checkbox' && field.value === '') {
           // Append the error message
           errorContainer.textContent = `This field is required.`;
           errorContainer.classList.remove('hidden');

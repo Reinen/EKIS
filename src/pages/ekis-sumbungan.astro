@@ -294,19 +294,26 @@ const contacts = [
               </div>
             </div>
 
-            <div class='grid items-center px-3 lg:grid-cols-3'>
+            <div
+              class='grid items-center px-3 lg:grid-cols-3 place-content-start'
+            >
               <span class='text-xl lg:text-[1.4rem] font-bold'> </span>
               <div class='lg:col-span-2 flex'>
                 <input
                   type='checkbox'
                   id='agree'
-                  class='border-2 border-gray-300 rounded text-ekis focus:border-gray-300 focus:ring-ekis'
+                  class='mt-1 border-2 border-gray-300 rounded text-ekis focus:border-gray-300 focus:ring-ekis'
+                  required
                 />
-                <label class='ml-2 -mt-1' for='agree'>
-                  By checking this box I agree to the Terms & Conditions and
-                  Privacy Policy and all information given is correct and
-                  verified.
-                </label>
+                <div>
+                  <label class='ml-2' for='agree'>
+                    By checking this box I agree to the Terms & Conditions and
+                    Privacy Policy and all information given is correct and
+                    verified.
+                  </label>
+                  <br />
+                  <div class='error-message text-ekis text-sm'></div>
+                </div>
               </div>
             </div>
 
@@ -351,12 +358,12 @@ const contacts = [
                 quidem corporis esse a debitis vitae.
               </p>
 
-              <button
-                type='button'
-                class='px-10 py-3 text-sm uppercase rounded-full text-slate-50 next-btn bg-ekis hover:opacity-80'
+              <a
+                href='/ekis-sumbungan'
+                class='px-10 py-3 text-sm uppercase rounded-full text-slate-50 bg-ekis hover:opacity-80 no-underline'
               >
                 FILE ANOTHER REPORT
-              </button>
+              </a>
             </div>
           </div>
           <!-- END STEP 3 -->
