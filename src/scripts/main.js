@@ -6,6 +6,9 @@ import 'https://unpkg.com/swiper/swiper-bundle.min.js';
 // * HIGHCHARTS
 import 'https://code.highcharts.com/maps/highmaps.js';
 
+// * FLATPICKR
+import 'https://cdn.jsdelivr.net/npm/flatpickr';
+
 (function () {
   const burgerMenu = () => {
     // * Burger Menu
@@ -409,6 +412,12 @@ import 'https://code.highcharts.com/maps/highmaps.js';
     }
   };
 
+  const datepicker = () => {
+    flatpickr('#date-input', {
+      dateFormat: 'm/d/Y',
+    });
+  };
+
   // Wait for the DOM to finish loading before running the script
   document.addEventListener('DOMContentLoaded', function () {
     // Your JavaScript code goes here
@@ -418,5 +427,6 @@ import 'https://code.highcharts.com/maps/highmaps.js';
     formWizard();
     cities();
     highcharts();
+    datepicker();
   });
 })();
