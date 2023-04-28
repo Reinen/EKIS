@@ -1,5 +1,8 @@
 /***  EKIS 2023 ****/
 
+// * jQuery
+import 'https://code.jquery.com/jquery-3.6.4.min.js';
+
 // * SWIPER JS
 import 'https://unpkg.com/swiper/swiper-bundle.min.js';
 
@@ -8,6 +11,9 @@ import 'https://code.highcharts.com/maps/highmaps.js';
 
 // * FLATPICKR
 import 'https://cdn.jsdelivr.net/npm/flatpickr';
+
+// * INPUTMASK
+import 'https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js';
 
 (function () {
   const burgerMenu = () => {
@@ -170,7 +176,7 @@ import 'https://cdn.jsdelivr.net/npm/flatpickr';
       requiredFields.forEach((field, index) => {
         const errorContainer = field.parentNode.querySelector('.error-message');
         const dateRegex = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
-        const numericRegex = /^[0-9+()]*$/;
+        const numericRegex = /^[0-9+() ]*$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (field.type === 'checkbox' && !field.checked) {
@@ -246,6 +252,14 @@ import 'https://cdn.jsdelivr.net/npm/flatpickr';
     nextBtn.forEach((button) => {
       button.addEventListener('click', handleNext);
     });
+
+    // CONTACT NUMBER INPUTMASK
+    const field = $('#ReportContact');
+    const maskOptions = {
+      mask: '(+63) 9999999999', // (+63) 9123456789
+    };
+    const inputMask = Inputmask(maskOptions);
+    inputMask.mask(field);
   };
 
   const cities = () => {
@@ -294,7 +308,7 @@ import 'https://cdn.jsdelivr.net/npm/flatpickr';
     populateSelect();
   };
 
-  const popover = (option) => {
+  const popover = () => {
     // * POPOVER
     const bodyOverflow = document.querySelector('body');
     const popover = document.querySelector(`[data-popover-name="popover"]`);
@@ -318,21 +332,6 @@ import 'https://cdn.jsdelivr.net/npm/flatpickr';
         popover.classList.remove('opacity-0');
         popover.classList.add('opacity-100');
       }, 10);
-
-      // Populate the details
-      // const image1 = document.querySelector(`.image1`);
-      // const image2 = document.querySelector(`.image2`);
-      // const title = document.querySelector(`.title`);
-      // const description = document.querySelector(`.description`);
-      // const link = document.querySelector(`.link`);
-      // const tag = document.querySelector(`.tag`);
-
-      // image1.src = option.image1;
-      // image2.src = option.image2;
-      // title.textContent = option.title;
-      // description.textContent = option.description;
-      // tag.textContent = option.tag;
-      // link.href = option.link;
     }
   };
 
@@ -397,7 +396,7 @@ import 'https://cdn.jsdelivr.net/npm/flatpickr';
               events: {
                 click: function (event) {
                   // POPOVER DETAILS
-                  popover(this.options);
+                  popover();
                 },
               },
             },
